@@ -5,8 +5,10 @@
   "homepage": "https://amyfend.github.io/Neighborhood-Map/",
   "dependencies": {
     "gh-pages": "^2.0.0",
+    "google-maps-react": "^2.0.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-google-maps": "^9.4.5",
     "react-scripts": "1.1.5"
   },
   "scripts": {
