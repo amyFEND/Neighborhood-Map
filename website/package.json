@@ -2,7 +2,7 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://amyfend.github.io/website/",
+  "homepage": "https://amyfend.github.io/Neighborhood-Map/",
   "dependencies": {
     "gh-pages": "^2.0.0",
     "react": "^16.5.2",
