@@ -153,15 +153,20 @@ const mapStyles = [
             }
         ]
     }
-]
+];
+
+const center = {
+    lat: 33.8091,
+    lng: -117.918972
+  }
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
     defaultZoom={ 16 }
-    defaultCenter={{ lat: 33.810485, lng: -117.918989 }}
+    defaultCenter={{ lat: center.lat, lng: center.lng }}
     defaultOptions={{ styles: mapStyles }}
   >
-    {props.isMarkerShown && <Marker position={{ lat: 33.810485, lng: -117.918989 }} />}
+    {props.isMarkerShown && <Marker position={{ lat: center.lat, lng: center.lng }} />}
   </GoogleMap>
 ))
 
