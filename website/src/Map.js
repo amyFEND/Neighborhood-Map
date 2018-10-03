@@ -167,7 +167,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     defaultOptions={{ styles: mapStyles, mapTypeControl: false }}
   >
     {props.isMarkerShown && <Marker title={'Happiest Place on Earth'} position={{ lat: 33.8091, lng: -117.918972 }} />}
-    //TODO: figure out how to manipulate markers
+    { /* TODO: figure out how to manipulate markers*/ }
     <Marker
       title={"Peter Pan's Flight"}
       position={{lat: 33.813126, lng: -117.91888}}
