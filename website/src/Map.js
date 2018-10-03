@@ -164,7 +164,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
     defaultZoom={ 16 }
     defaultCenter={{ lat: center.lat, lng: center.lng }}
-    defaultOptions={{ styles: mapStyles }}
+    defaultOptions={{ styles: mapStyles, mapTypeControl: false }}
   >
     {props.isMarkerShown && <Marker position={{ lat: center.lat, lng: center.lng }} />}
   </GoogleMap>
