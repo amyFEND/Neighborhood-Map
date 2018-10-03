@@ -20,5 +20,6 @@
 #sidebar {
   background-color: red;
   width: 320px;
+  height: calc(100vh - 95px);
   position: absolute;
 }
