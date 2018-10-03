@@ -1,0 +1,23 @@
+img, embed, object, video {
+  max-width: 100%;
+}
+
+nav a, button {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+/* *** Sidebar *** */
+#sidebar {
+  z-index: 100;
+  max-width: 100%;
+  height: calc(100vh - 75px);
+  overflow-y: scroll;
+}
+.locations-list-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.locations-list {
+  width: 100%;
+}

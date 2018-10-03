@@ -178,7 +178,7 @@ class Map extends Component {
         isMarkerShown
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA8HDeuxQegHPX6FU5jN-_LU75rDIXSfhM"
         loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `600px` }} />}
+        containerElement={<div style={{ height: `calc(100vh - 75px)` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
     )

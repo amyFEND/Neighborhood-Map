@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MapContainer from './MapContainer';
 import Navigation from './Navigation';
 import './App.css';
+import './Responsive.css';
 
 class App extends Component {
   render() {
