@@ -16,3 +16,9 @@
 .App-intro {
   font-size: large;
 }
+
+#sidebar {
+  background-color: red;
+  width: 320px;
+  position: absolute;
+}
