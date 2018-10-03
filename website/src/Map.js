@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-// Map styles made with
+// Map styles made with Snazzy Maps
 const mapStyles = [
     {
         "featureType": "landscape.man_made",
