@@ -6,8 +6,8 @@ class Sidebar extends Component {
   render() {
     return (
       <div id="sidebar">
-        <button>Info</button>
-        <input type='text' name='search' placeholder='Filter results' />
+        <button className="infoBtn">Info</button>
+        <input type='text' name='search' placeholder='Filter results' className="input" />
       </div>
     )
   }

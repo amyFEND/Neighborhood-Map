@@ -17,9 +17,22 @@
   font-size: large;
 }
 
+/* *** Sidebar *** */
 #sidebar {
-  background-color: red;
+  background-color: rgba(190, 130, 133, 0.75);
   width: 320px;
   height: calc(100vh - 95px);
   position: absolute;
+  align-content: center;
+  display: block;
+  border: none;
+}
+.infoBtn {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.input {
+  width: 90%;
 }
