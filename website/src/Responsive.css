@@ -25,6 +25,10 @@ img, embed, object, video {
     font-size: 2.5em;
     padding: 8px 15px 0px 15px;
     visibility: visible;
+    opacity: 1;
+    transition: visibility 300ms linear 500ms, opacity 300ms;
+    -webkit-transition: visibility 300ms linear 500ms, opacity 300ms; /* Safari */
+    -ms-transition: visibility 300ms linear 500ms, opacity 300ms; /* IE 9 */
   }
   .cross {
     font-size: 6em;
@@ -46,6 +50,10 @@ img, embed, object, video {
     font-size: 2.8em;
     padding: 6px 15px 0px 15px;
     visibility: visible;
+    opacity: 1;
+    transition: visibility 300ms linear 500ms, opacity 300ms;
+    -webkit-transition: visibility 300ms linear 500ms, opacity 300ms; /* Safari */
+    -ms-transition: visibility 300ms linear 500ms, opacity 300ms; /* IE 9 */
   }
   .cross {
     font-size: 6.6em;
@@ -64,9 +72,29 @@ img, embed, object, video {
   }
   .hamburger {
     visibility: visible;
+    opacity: 1;
+    transition: visibility 300ms linear 500ms, opacity 300ms;
+    -webkit-transition: visibility 300ms linear 500ms, opacity 300ms; /* Safari */
+    -ms-transition: visibility 300ms linear 500ms, opacity 300ms; /* IE 9 */
   }
   #sidebar {
     transform: translate(-320px, 0);
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease; /* Safari */
+    -ms-transition: transform 0.3s ease; /* IE 9 */
+  }
+}
+
+@media screen and (min-width: 651px) {
+  .hamburger {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 300ms linear 500ms, opacity 300ms;
+    -webkit-transition: visibility 300ms linear 500ms, opacity 300ms; /* Safari */
+    -ms-transition: visibility 300ms linear 500ms, opacity 300ms; /* IE 9 */
+  }
+  #sidebar {
+    transform: translate(0, 0);
     transition: transform 0.3s ease;
     -webkit-transition: transform 0.3s ease; /* Safari */
     -ms-transition: transform 0.3s ease; /* IE 9 */
