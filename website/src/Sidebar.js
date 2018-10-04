@@ -6,7 +6,6 @@ class Sidebar extends Component {
   render() {
     return (
       <div id="sidebar">
-        <button className="infoBtn">Info</button>
 
         <input type='text' name='search' placeholder='Filter results' className="input" />
 
@@ -20,7 +19,9 @@ class Sidebar extends Component {
         <hr />
 
         <div className="location-info">Location information here</div>
-        
+
+        <button className="infoBtn">About</button>
+
       </div>
     )
   }
