@@ -27,11 +27,12 @@ nav a, button {
   }
   .hamburger {
     font-size: 2.5em;
-    padding: 6px 15px 0px 15px;
+    padding: 8px 15px 0px 15px;
+    visibility: visible;
   }
   .cross {
     font-size: 6em;
-    padding: 11px 15px 0px 15px;
+    padding: 13px 15px 0px 15px;
   }
   #sidebar {
     transform: translate(-320px, 0);
@@ -45,6 +46,15 @@ nav a, button {
   .App-title {
     padding-left: 2em;
   }
+  .hamburger {
+    font-size: 2.8em;
+    padding: 6px 15px 0px 15px;
+    visibility: visible;
+  }
+  .cross {
+    font-size: 6.6em;
+    padding: 11px 15px 0px 15px;
+  }
   #sidebar {
     transform: translate(-320px, 0);
     transition: transform 0.3s ease;
@@ -55,6 +65,9 @@ nav a, button {
 
 @media screen and (min-width: 451px) and (max-width: 650px) {
   .App-title {
+  }
+  .hamburger {
+    visibility: visible;
   }
   #sidebar {
     transform: translate(-320px, 0);
