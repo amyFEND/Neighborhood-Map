@@ -8,6 +8,12 @@ class Sidebar extends Component {
       <div id="sidebar">
         <button className="infoBtn">Info</button>
         <input type='text' name='search' placeholder='Filter results' className="input" />
+        <select className="select">
+          <option disabled value="select">Filter by park...</option>
+          <option value="all">All</option>
+          <option value="disneyland">Disneyland Park</option>
+          <option value="californiaAdventure">Disney California Adventure</option>
+        </select>
         <div className="location-info">Location information here</div>
       </div>
     )
