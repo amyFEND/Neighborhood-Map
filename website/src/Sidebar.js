@@ -8,6 +8,7 @@ class Sidebar extends Component {
       <div id="sidebar">
         <button className="infoBtn">Info</button>
         <input type='text' name='search' placeholder='Filter results' className="input" />
+        <div className="location-info">Location information here</div>
       </div>
     )
   }
