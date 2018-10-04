@@ -2,10 +2,6 @@ img, embed, object, video {
   max-width: 100%;
 }
 
-nav a, button {
-  min-width: 48px;
-}
-
 /* *** Sidebar *** */
 #sidebar {
   z-index: 100;
