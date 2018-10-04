@@ -11,6 +11,7 @@
 
 .App-title {
   font-size: 2em;
+  font-weight: bolder;
 }
 
 .App-intro {
@@ -28,11 +29,31 @@
   border: none;
 }
 .infoBtn {
+  width: 80px;
+  height: 30px;
+  font-size: 1em;
+  font-weight: bolder;
+  text-transform: full-width;
+  color: rgb(255, 255, 255);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(130, 194, 191);
+  border: solid 1px rgb(96, 157, 154);
 }
 .input {
   width: 90%;
+  font-size: 1.1em;
+
+}
+.location-info {
+  width: 300px;
+  height: 200px;
+  max-width: 90%;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 2px;
+  font-size: 1em;
 }

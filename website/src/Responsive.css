@@ -4,7 +4,6 @@ img, embed, object, video {
 
 nav a, button {
   min-width: 48px;
-  min-height: 48px;
 }
 
 /* *** Sidebar *** */
