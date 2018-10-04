@@ -11,18 +11,51 @@ body, .App {
   height: 75px;
   padding: 10px;
   color: white;
+  display: -webkit-flex; /* Safari */
+  -webkit-align-items: center; /* Safari 7.0+ */
+  display: flex;
+  align-items: center;
 }
 
 .App-title {
   font-size: 2em;
   font-weight: bolder;
   letter-spacing: 3px;
+  flex: 1;
 }
 
 .App-intro {
   font-size: large;
 }
 
+.hamburger{
+  background: none;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  padding: 5px 15px 0px 15px;
+  color: rgb(255, 255, 255);
+  border: 0;
+  font-size: 3em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 100;
+}
+.cross{
+  background: none;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  padding: 11px 15px 0px 15px;
+  color: rgb(255, 255, 255);
+  border: 0;
+  font-size: 7em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 100;
+}
 /* *** Sidebar *** */
 #sidebar {
   background-color: rgba(190, 130, 133, 0.75);
