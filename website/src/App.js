@@ -9,8 +9,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navigation />
-        <Sidebar />
+        <button className="hamburger">&#9776;</button>
+        <button className="cross">&#735;</button>
+
+        <Navigation showSidebar={this.showSidebar} />
+
+        {(<Sidebar />)}
+
         <MapContainer />
       </div>
     );
