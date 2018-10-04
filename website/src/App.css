@@ -73,6 +73,6 @@ body, .App {
 }
 hr {
   border: 0;
-  height: 3px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(130, 194, 191), rgba(0, 0, 0, 0));
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01), rgba(130, 194, 191, 0.99), rgba(255, 255, 255, 0.01));
 }
