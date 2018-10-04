@@ -14,6 +14,7 @@ class Sidebar extends Component {
           <option value="disneyland">Disneyland Park</option>
           <option value="californiaAdventure">Disney California Adventure</option>
         </select>
+        <hr />
         <div className="location-info">Location information here</div>
       </div>
     )

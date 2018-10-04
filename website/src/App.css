@@ -63,3 +63,8 @@
   font-size: 1em;
   margin-top: 10px;
 }
+hr {
+  border: 0;
+  height: 3px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(130, 194, 191), rgba(0, 0, 0, 0));
+}
