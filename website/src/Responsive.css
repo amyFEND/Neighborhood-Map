@@ -19,3 +19,13 @@ nav a, button {
 .locations-list {
   width: 100%;
 }
+
+
+@media screen and (max-width: 650px) {
+  #sidebar {
+    transform: translate(-320px, 0);
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease-in-out; /* Safari */
+    -ms-transition: transform 0.3s ease; /* IE 9 */
+  }
+}
