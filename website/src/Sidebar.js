@@ -5,7 +5,7 @@ import './Responsive.css';
 class Sidebar extends Component {
   render() {
     return (
-      <div id="sidebar">
+      <div id="sidebar" className={this.props.isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'}>
 
         <input type='text' name='search' placeholder='Filter results' className="input" />
 

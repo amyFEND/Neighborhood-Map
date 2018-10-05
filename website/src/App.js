@@ -27,9 +27,9 @@ class App extends Component {
           {this.state.isToggleOn ? String.fromCharCode(0x2630) : String.fromCharCode(0x02DF)}
         </button>
 
-        <Navigation showSidebar={this.showSidebar} />
+        <Navigation />
 
-        {(<Sidebar />)}
+        <Sidebar isToggleOn={this.state.isToggleOn ? false : true} />
 
         <MapContainer />
       </div>
