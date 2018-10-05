@@ -32,15 +32,18 @@ img, embed, object, video {
   .visible {
     visibility: visible;
     opacity: 1;
-    transition: visibility 300ms linear 500ms, opacity 300ms;
-    -webkit-transition: visibility 300ms linear 500ms, opacity 300ms; /* Safari */
-    -ms-transition: visibility 300ms linear 500ms, opacity 300ms; /* IE 9 */
+    animation-name: fadeInOpacity;
+  	animation-iteration-count: 1;
+  	animation-timing-function: ease-in;
+  	animation-duration: 1.5s;
   }
-  #sidebar {
-    transform: translate(-320px, 0);
-    transition: transform 0.3s ease;
-    -webkit-transition: transform 0.3s ease; /* Safari */
-    -ms-transition: transform 0.3s ease; /* IE 9 */
+  @keyframes fadeInOpacity {
+  	0% {
+  		opacity: 0;
+  	}
+  	100% {
+  		opacity: 1;
+  	}
   }
 }
 
@@ -59,15 +62,18 @@ img, embed, object, video {
   .visible {
     visibility: visible;
     opacity: 1;
-    transition: visibility 300ms linear 500ms, opacity 300ms;
-    -webkit-transition: visibility 300ms linear 500ms, opacity 300ms; /* Safari */
-    -ms-transition: visibility 300ms linear 500ms, opacity 300ms; /* IE 9 */
+    animation-name: fadeInOpacity;
+  	animation-iteration-count: 1;
+  	animation-timing-function: ease-in;
+  	animation-duration: 1.5s;
   }
-  #sidebar {
-    transform: translate(-320px, 0);
-    transition: transform 0.3s ease;
-    -webkit-transition: transform 0.3s ease; /* Safari */
-    -ms-transition: transform 0.3s ease; /* IE 9 */
+  @keyframes fadeInOpacity {
+  	0% {
+  		opacity: 0;
+  	}
+  	100% {
+  		opacity: 1;
+  	}
   }
 }
 
@@ -77,15 +83,18 @@ img, embed, object, video {
   .visible {
     visibility: visible;
     opacity: 1;
-    transition: visibility 300ms linear 500ms, opacity 300ms;
-    -webkit-transition: visibility 300ms linear 500ms, opacity 300ms; /* Safari */
-    -ms-transition: visibility 300ms linear 500ms, opacity 300ms; /* IE 9 */
+    animation-name: fadeInOpacity;
+  	animation-iteration-count: 1;
+  	animation-timing-function: ease-in;
+  	animation-duration: 1.5s;
   }
-  #sidebar {
-    transform: translate(-320px, 0);
-    transition: transform 0.3s ease;
-    -webkit-transition: transform 0.3s ease; /* Safari */
-    -ms-transition: transform 0.3s ease; /* IE 9 */
+  @keyframes fadeInOpacity {
+  	0% {
+  		opacity: 0;
+  	}
+  	100% {
+  		opacity: 1;
+  	}
   }
 }
 
@@ -97,7 +106,9 @@ img, embed, object, video {
     -webkit-transition: visibility 300ms linear 500ms, opacity 300ms; /* Safari */
     -ms-transition: visibility 300ms linear 500ms, opacity 300ms; /* IE 9 */
   }
-  #sidebar {
+  .sidebar-show-big {
+    visibility: visible;
+    opacity: 1;
     transform: translate(0, 0);
     transition: transform 0.3s ease;
     -webkit-transition: transform 0.3s ease; /* Safari */
