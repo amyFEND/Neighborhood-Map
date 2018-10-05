@@ -156,9 +156,14 @@ const mapStyles = [
 ];
 
 const center = {
-    lat: 33.8091,
-    lng: -117.918972
-  }
+  lat: 33.8091,
+  lng: -117.918972
+}
+
+const mainMarker = {
+  title: 'Happiest Place on Earth',
+  park: 'center'
+}
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
@@ -166,7 +171,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     defaultCenter={{ lat: center.lat, lng: center.lng }}
     defaultOptions={{ styles: mapStyles, mapTypeControl: false }}
   >
-    {props.isMarkerShown && <Marker title={'Happiest Place on Earth'} position={{ lat: center.lat, lng: center.lng }} />}
+    {props.isMarkerShown && <Marker title={mainMarker.title} position={{ lat: center.lat, lng: center.lng }} />}
     { /* TODO: figure out how to manipulate markers*/ }
     <Marker
       title={"Peter Pan's Flight"}
