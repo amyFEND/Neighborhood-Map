@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LocationInfo from './LocationInfo';
 import './App.css';
 import './Responsive.css';
 
@@ -18,7 +19,7 @@ class Sidebar extends Component {
 
         <hr />
 
-        <div className="location-info">Location information here</div>
+        <LocationInfo />
 
         <button className="infoBtn">About</button>
 
