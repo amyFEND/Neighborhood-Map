@@ -126,4 +126,24 @@ hr {
   border: 0;
   height: 2px;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01), rgba(130, 194, 191, 0.99), rgba(255, 255, 255, 0.01));
+
+/* *** Custom Scrollbar *** */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(190, 130, 133, 0.2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(130, 194, 191);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(194, 159, 130);
 }
