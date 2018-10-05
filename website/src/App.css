@@ -28,7 +28,7 @@ body, .App {
   font-size: large;
 }
 
-.hamburger{
+.hamburger-open {
   background: none;
   position: absolute;
   top: 10px;
@@ -44,15 +44,15 @@ body, .App {
   visibility: hidden;
   opacity: 0;
 }
-.cross{
+.hamburger-close {
   background: none;
   position: absolute;
   top: 10px;
   left: 0;
-  padding: 11px 15px 0px 15px;
-  color: rgb(255, 255, 255);
+  padding: 5px 15px 0px 15px;
+  color: rgb(130, 194, 191);
   border: 0;
-  font-size: 7em;
+  font-size: 3em;
   font-weight: bold;
   cursor: pointer;
   outline: none;

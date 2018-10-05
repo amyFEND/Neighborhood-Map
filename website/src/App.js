@@ -23,9 +23,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <button className={this.state.isToggleOn ? 'hamburger visible' : 'cross visible'} onClick={this.handleClick}>
-          {this.state.isToggleOn ? String.fromCharCode(0x2630) : String.fromCharCode(0x02DF)}
-        </button>
+        <button className={this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'} onClick={this.handleClick}>&#x2630;</button>
 
         <Navigation />
 
