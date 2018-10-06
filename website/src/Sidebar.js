@@ -20,7 +20,7 @@ class Sidebar extends Component {
 
         <hr />
 
-        {this.props.rides.map((ride, index) => (
+        {rides.map((ride, index) => (
           <LocationInfo
             ride={ride}
             key={index}
