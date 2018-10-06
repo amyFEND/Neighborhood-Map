@@ -3,9 +3,12 @@ import Map from './Map';
 
 class MapContainer extends Component {
   render() {
+    const { rides } = this.props
     return (
       <map className="map-container">
-        <Map />
+        <Map
+          rides={rides}
+        />
       </map>
     )
   }

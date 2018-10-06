@@ -175,92 +175,18 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   >
     {props.isMarkerShown && <Marker title={centerMarker.title} position={{ lat: centerMarker.lat, lng: centerMarker.lng }} />}
     { /* TODO: figure out how to manipulate markers*/ }
-    <Marker
-      title={"Peter Pan's Flight"}
-      position={{lat: 33.813126, lng: -117.91888}}
-      />
-    <Marker
-      title={'Buzz Lightyear Astro-Blasters'}
-      position={{lat: 33.812196, lng: -117.91799}}
-      />
-    <Marker
-      title={'Star Tours'}
-      position={{lat: 33.811883, lng: -117.917963}}
-      />
-    <Marker
-      title={'Autopia'}
-      position={{lat: 33.812567, lng: -117.916366}}
-      />
-    <Marker
-      title={'Space Mountain'}
-      position={{lat: 33.81138, lng: -117.917307}}
-      />
-    <Marker
-      title={'Haunted Mansion'}
-      position={{lat: 33.811723, lng: -117.922184}}
-      />
-    <Marker
-      title={'Pirates of the Caribbean'}
-      position={{lat: 33.811254, lng: -117.920785}}
-      />
-    <Marker
-      title={'The Many Adventures of Winnie the Pooh'}
-      position={{lat: 33.812398, lng: -117.922601}}
-      />
-    <Marker
-      title={'Matterhorn Bobsleds'}
-      position={{lat: 33.81307, lng: -117.91782}}
-      />
-    <Marker
-      title={'Big Thunder Moutnain Railroad'}
-      position={{lat: 33.812521, lng: -117.920444}}
-      />
-    <Marker
-      title={'Jungle Cruise'}
-      position={{lat: 33.811437, lng: -117.919952}}
-      />
-    <Marker
-      title={'Indiana Jones Adventure'}
-      position={{lat: 33.811349, lng: -117.920424}}
-      />
-    <Marker
-      title={"Soarin' Around the World"}
-      position={{lat: 33.808396, lng: -117.919971}}
-      />
-    <Marker
-      title={'Grizzly River Run'}
-      position={{lat: 33.807548, lng: -117.920845}}
-      />
-    <Marker
-      title={"Ariel's Undersea Adventure"}
-      position={{lat: 33.806349, lng: -117.921259}}
-      />
-    <Marker
-      title={"Goofy's Sky School"}
-      position={{lat: 33.806258, lng: -117.92277}}
-      />
-    <Marker
-      title={'Toy Story Midway Mania'}
-      position={{lat: 33.80459, lng: -117.921658}}
-      />
-    <Marker
-      title={'Incredicoaster'}
-      position={{lat: 33.804619, lng: -117.920656}}
-      />
-    <Marker
-      title={"Mater's Junkyard Jamboree"}
-      position={{lat: 33.806489, lng: -117.919153}}
-      />
-    <Marker
-      title={'Radiator Springs Racers'}
-      position={{lat: 33.805188, lng: -117.918657}}
-      />
+    {props.rides.map((ride, index) => (
+        <Marker
+            key={index}
+            position={ride.location}
+        />
+    ))}
   </GoogleMap>
 ))
 
 class Map extends Component {
-
   render() {
+    const { rides } = this.props
     return (
       <MyMapComponent
         isMarkerShown
@@ -268,6 +194,7 @@ class Map extends Component {
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `calc(100vh - 95px)` }} />}
         mapElement={<div style={{ height: `100%` }} />}
+        rides={rides}
       />
     )
   }
