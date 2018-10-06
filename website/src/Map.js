@@ -174,11 +174,12 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     defaultOptions={{ styles: mapStyles, mapTypeControl: false }}
   >
     {props.isMarkerShown && <Marker title={centerMarker.title} position={{ lat: centerMarker.lat, lng: centerMarker.lng }} />}
-    { /* TODO: figure out how to manipulate markers*/ }
+    { /* TODO: get custom icons for markers */ }
     {props.rides.map((ride, index) => (
         <Marker
             key={index}
             position={ride.location}
+            title={ride.title}
         />
     ))}
   </GoogleMap>

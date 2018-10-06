@@ -5,8 +5,9 @@ import './Responsive.css';
 
 class Sidebar extends Component {
   render() {
+    const { rides, isToggleOn } = this.props
     return (
-      <div id="sidebar" className={this.props.isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'}>
+      <div id="sidebar" className={isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'}>
 
         <input type='text' name='search' placeholder='Filter results' className="input" />
 
@@ -19,7 +20,12 @@ class Sidebar extends Component {
 
         <hr />
 
-        <LocationInfo />
+        {this.props.rides.map((ride, index) => (
+          <LocationInfo
+            ride={ride}
+            key={index}
+          />
+        ))}
 
         <button className="infoBtn">About</button>
 

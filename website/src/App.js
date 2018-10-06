@@ -150,7 +150,10 @@ class App extends Component {
 
         <Navigation />
 
-        <Sidebar isToggleOn={this.state.isToggleOn ? false : true} />
+        <Sidebar
+          isToggleOn={this.state.isToggleOn ? false : true}
+          rides={rides}
+        />
 
         <MapContainer
           rides={rides}
