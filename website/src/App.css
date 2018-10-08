@@ -64,6 +64,7 @@ body, .App {
 #sidebar {
   width: 320px;
   height: calc(100vh - 95px);
+  margin-top: -1px;
   position: absolute;
   align-content: center;
   display: block;
@@ -124,8 +125,9 @@ hr {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01), rgba(130, 194, 191, 0.99), rgba(255, 255, 255, 0.01));
 }
 .locations-container {
-  height: calc(100vh - 195px);
+  height: calc(100vh - 185px);
   overflow-y: scroll;
+  margin-top: -10px
 }
 
 /* *** Location Info Box *** */
