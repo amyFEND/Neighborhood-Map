@@ -7,7 +7,7 @@ body, .App {
 }
 
 .App-header {
-  background-color: rgba(194, 130, 133, 0.9);
+  background-color: rgba(194, 130, 133, 1);
   height: 75px;
   padding: 10px;
   color: white;
@@ -62,13 +62,13 @@ body, .App {
 }
 /* *** Sidebar *** */
 #sidebar {
-  background-color: rgba(190, 130, 133, 0.75);
   width: 320px;
   height: calc(100vh - 95px);
   position: absolute;
   align-content: center;
   display: block;
   border: none;
+  background-image: linear-gradient(to top, rgba(194, 130, 133, 0), rgba(194, 130, 133, 1));
 }
 .sidebar-show {
   visibility: visible;
@@ -153,7 +153,7 @@ hr {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: rgba(190, 130, 133, 0);
+    background: rgba(194, 130, 133, 0);
 }
 
 /* Handle */
