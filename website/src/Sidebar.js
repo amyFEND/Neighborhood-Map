@@ -31,7 +31,9 @@ class Sidebar extends Component {
           ))}
         </div>
 
-        <button className="infoBtn">About</button>
+        <div className="infoBtn-container">
+          <button className="infoBtn">Help</button>
+        </div>
 
       </div>
     )
