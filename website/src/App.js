@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import MapContainer from './MapContainer';
-import Navigation from './Navigation';
-import Sidebar from './Sidebar';
-import './App.css';
-import './Responsive.css';
+import React, { Component } from 'react'
+import MapContainer from './MapContainer'
+import Navigation from './Navigation'
+import Sidebar from './Sidebar'
+import './App.css'
+import './Responsive.css'
 
 class App extends Component {
   constructor (props) {
@@ -144,14 +144,20 @@ class App extends Component {
 
   render() {
     const { rides } = this.state
+    let hamburgerClass = this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'
+    let sidebarToggle = this.state.isToggleOn ? false : true
+
     return (
       <div className="App">
-        <button className={this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'} onClick={this.handleClick}>&#x2630;</button>
+        <button
+          className={hamburgerClass}
+          onClick={this.handleClick}
+        >&#x2630;</button>
 
         <Navigation />
 
         <Sidebar
-          isToggleOn={this.state.isToggleOn ? false : true}
+          isToggleOn={sidebarToggle}
           rides={rides}
         />
 
@@ -163,4 +169,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

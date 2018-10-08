@@ -1,16 +1,23 @@
-import React, { Component } from 'react';
-import LocationInfo from './LocationInfo';
-import './App.css';
-import './Responsive.css';
+import React, { Component } from 'react'
+import LocationInfo from './LocationInfo'
+import './App.css'
+import './Responsive.css'
 
 class Sidebar extends Component {
   render() {
     const { rides, isToggleOn } = this.props
+    let sidebarClass = isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'
+
     return (
-      <div id="sidebar" className={isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'}>
+      <div id="sidebar" className={sidebarClass}>
 
         <div className="sidebarOptns">
-          <input type='text' name='search' placeholder='Filter results' className="input" />
+          <input
+            type='text'
+            name='search'
+            placeholder='Filter results'
+            className="input"
+          />
 
           <select className="select">
             <option disabled value="select">Filter by park...</option>
@@ -40,4 +47,4 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar;
+export default Sidebar

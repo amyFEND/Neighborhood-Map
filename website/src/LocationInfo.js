@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class LocationInfo extends Component {
   render() {
     const { ride } = this.props
+
     return(
       <div className="location-info">
         <span className="location-info-header">{ride.title}</span>
+
         <div className="location-details">
           <span>Location: {ride.park}</span><br />
-          <span>Ride Details TDB</span><br />
+          <span>Ride Details TBD</span><br />
           <span>Street View Image</span>
         </div>
       </div>
@@ -16,4 +18,4 @@ class LocationInfo extends Component {
   }
 }
 
-export default LocationInfo;
+export default LocationInfo

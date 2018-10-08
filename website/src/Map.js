@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-{/* Map styles made with Snazzy Maps */}
 const mapStyles = [
     {
         "featureType": "landscape.man_made",
@@ -188,6 +187,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 class Map extends Component {
   render() {
     const { rides } = this.props
+
     return (
       <MyMapComponent
         isMarkerShown
@@ -201,4 +201,4 @@ class Map extends Component {
   }
 }
 
-export default Map;
+export default Map
