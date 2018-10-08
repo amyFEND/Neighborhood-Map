@@ -84,6 +84,12 @@ body, .App {
   -webkit-transition: transform 0.3s ease; /* Safari */
   -ms-transition: transform 0.3s ease; /* IE 9 */
 }
+.sidebarOptns {
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top: 0;
+  background-image: linear-gradient(to top, rgba(194, 130, 133, 0.9), rgba(194, 130, 133, 1));
+}
 .infoBtn {
   width: 80px;
   height: 30px;

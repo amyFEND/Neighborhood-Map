@@ -9,16 +9,18 @@ class Sidebar extends Component {
     return (
       <div id="sidebar" className={isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'}>
 
-        <input type='text' name='search' placeholder='Filter results' className="input" />
+        <div className="sidebarOptns">
+          <input type='text' name='search' placeholder='Filter results' className="input" />
 
-        <select className="select">
-          <option disabled value="select">Filter by park...</option>
-          <option value="all">All</option>
-          <option value="disneyland">Disneyland Park</option>
-          <option value="californiaAdventure">Disney California Adventure</option>
-        </select>
+          <select className="select">
+            <option disabled value="select">Filter by park...</option>
+            <option value="all">All</option>
+            <option value="disneyland">Disneyland Park</option>
+            <option value="californiaAdventure">Disney California Adventure</option>
+          </select>
 
-        <hr />
+          <hr />
+        </div>
 
         {rides.map((ride, index) => (
           <LocationInfo
