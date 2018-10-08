@@ -123,6 +123,10 @@ hr {
   height: 2px;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01), rgba(130, 194, 191, 0.99), rgba(255, 255, 255, 0.01));
 }
+.locations-container {
+  height: calc(100vh - 195px);
+  overflow-y: scroll;
+}
 
 /* *** Location Info Box *** */
 .location-info {

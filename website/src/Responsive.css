@@ -6,7 +6,6 @@ img, embed, object, video {
 #sidebar {
   z-index: 100;
   max-width: 100%;
-  overflow-y: scroll;
 }
 .locations-list-container {
   display: flex;

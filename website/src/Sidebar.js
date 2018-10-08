@@ -22,12 +22,14 @@ class Sidebar extends Component {
           <hr />
         </div>
 
-        {rides.map((ride, index) => (
-          <LocationInfo
-            ride={ride}
-            key={index}
-          />
-        ))}
+        <div className="locations-container">
+          {rides.map((ride, index) => (
+            <LocationInfo
+              ride={ride}
+              key={index}
+            />
+          ))}
+        </div>
 
         <button className="infoBtn">About</button>
 
