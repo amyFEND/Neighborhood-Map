@@ -42,6 +42,7 @@ class Sidebar extends Component {
             <LocationInfo
               ride={ride}
               key={index}
+              infoWinClicked={this.props.infoWinClicked}
             />
           ))}
         </div>

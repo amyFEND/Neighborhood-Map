@@ -140,6 +140,7 @@ class App extends Component {
     this.updateQuery = this.updateQuery.bind(this);
     this.clearQuery = this.clearQuery.bind(this);
     this.markerClicked = this.markerClicked.bind(this);
+    this.infoWinClicked = this.infoWinClicked.bind(this);
   }
 
   handleClick() {
@@ -149,6 +150,10 @@ class App extends Component {
   }
 
   markerClicked = (ride) => {
+    this.setState({ query: ride.title })
+  }
+
+  infoWinClicked = (ride) => {
     this.setState({ query: ride.title })
   }
 
@@ -191,6 +196,7 @@ class App extends Component {
           query={query}
           updateQuery={this.updateQuery}
           clearQuery={this.clearQuery}
+          infoWinClicked={this.infoWinClicked}
         />
 
         <MapContainer
