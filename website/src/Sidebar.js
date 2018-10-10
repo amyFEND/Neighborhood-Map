@@ -9,6 +9,14 @@ class Sidebar extends Component {
   render() {
     const { rides, isToggleOn, query } = this.props
     let sidebarClass = isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'
+    let filteredRides
+
+    if (query) {
+      const match = new RegExp(escapeRegExp(query), 'i')
+      filteredRides = rides.filter((ride) => match.test(ride.title))
+    } else {
+      filteredRides = rides
+    }
 
     return (
       <div id="sidebar" className={sidebarClass}>
@@ -34,7 +42,7 @@ class Sidebar extends Component {
         </div>
 
         <div className="locations-container">
-          {rides.map((ride, index) => (
+          {filteredRides.map((ride, index) => (
             <LocationInfo
               ride={ride}
               key={index}
