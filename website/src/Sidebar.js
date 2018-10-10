@@ -50,6 +50,11 @@ class Sidebar extends Component {
               key={index}
             />
           ))}
+          {filteredRides.length !== rides.length &&
+            (<div className="location-total">
+              <span>Showing {filteredRides.length} of {rides.length} rides</span>
+            </div>)
+          }
         </div>
 
         <div className="infoBtn-container">
