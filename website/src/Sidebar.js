@@ -52,7 +52,7 @@ class Sidebar extends Component {
           ))}
           {filteredRides.length !== rides.length &&
             (<div className="location-total">
-              <span>Showing {filteredRides.length} of {rides.length} rides</span>
+              <span>Showing {filteredRides.length} of {rides.length} attractions</span>
             </div>)
           }
         </div>
