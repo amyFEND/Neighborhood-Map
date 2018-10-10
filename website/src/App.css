@@ -96,6 +96,7 @@ body, .App {
   font-size: 1.1em;
   font-family: inherit;
   margin-top: 10px;
+  border-color: rgb(194, 159, 130);
 }
 .select {
   width: 90%;
@@ -103,6 +104,7 @@ body, .App {
   background-color: rgb(255, 255, 255);
   font-size: 1em;
   margin-top: 10px;
+  border-color: rgb(194, 159, 130);
 }
 hr {
   border: 0;
@@ -143,7 +145,8 @@ hr {
   width: 300px;
   height: 200px;
   max-width: 90%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: solid 3px  rgba(194, 159, 130, 0.8);
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: auto;
@@ -165,6 +168,13 @@ hr {
   margin-left: auto;
   margin-right: auto;
   border: solid 1px red;
+}
+.location-total {
+  margin-bottom: 50px;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  color: rgb(194, 130, 133);
+  background-color: rgba(130, 194, 191, 0.9);
 }
 
 /* *** Custom Scrollbar *** */
