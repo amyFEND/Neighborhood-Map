@@ -18,6 +18,8 @@ class Sidebar extends Component {
       filteredRides = rides
     }
 
+    filteredRides.sort(sortBy('title'))
+
     return (
       <div id="sidebar" className={sidebarClass}>
 
