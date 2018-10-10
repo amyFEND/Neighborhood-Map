@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import MainMarker from './images/main-marker.png'
+import RideMarker from './images/rides-marker.png'
 
 const mapStyles = [
     {
@@ -172,11 +174,12 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     defaultCenter={{ lat: center.lat, lng: center.lng }}
     defaultOptions={{ styles: mapStyles, mapTypeControl: false }}
   >
-    {props.isMarkerShown && <Marker title={centerMarker.title} position={{ lat: centerMarker.lat, lng: centerMarker.lng }} />}
+    {props.isMarkerShown && <Marker icon={MainMarker} position={{ lat: centerMarker.lat, lng: centerMarker.lng }} title={centerMarker.title} />}
     { /* TODO: get custom icons for markers */ }
     {props.rides.map((ride, index) => (
         <Marker
             key={index}
+            icon={RideMarker}
             position={ride.location}
             title={ride.title}
         />
