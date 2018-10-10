@@ -175,6 +175,9 @@ hr {
 }
 .location-total {
   height: 50px;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 1em;
