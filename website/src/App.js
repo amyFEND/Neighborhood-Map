@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import MapContainer from './MapContainer'
 import Navigation from './Navigation'
 import Sidebar from './Sidebar'
+import escapeRegExp from 'escape-string-regexp'
+import sortBy from 'sort-by'
 import './App.css'
 import './Responsive.css'
 
@@ -157,6 +159,16 @@ class App extends Component {
     const { rides, query } = this.state
     let hamburgerClass = this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'
     let sidebarToggle = this.state.isToggleOn ? false : true
+    let filteredRides
+
+    if (query) {
+      const match = new RegExp(escapeRegExp(query), 'i')
+      filteredRides = rides.filter((ride) => match.test(ride.title))
+    } else {
+      filteredRides = rides
+    }
+
+    filteredRides.sort(sortBy('title'))
 
     return (
       <div className="App">
@@ -170,6 +182,7 @@ class App extends Component {
         <Sidebar
           isToggleOn={sidebarToggle}
           rides={rides}
+          filteredRides={filteredRides}
           query={query}
           updateQuery={this.updateQuery}
           clearQuery={this.clearQuery}

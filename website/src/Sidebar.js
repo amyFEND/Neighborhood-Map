@@ -1,24 +1,12 @@
 import React, { Component } from 'react'
 import LocationInfo from './LocationInfo'
-import escapeRegExp from 'escape-string-regexp'
-import sortBy from 'sort-by'
 import './App.css'
 import './Responsive.css'
 
 class Sidebar extends Component {
   render() {
-    const { rides, isToggleOn, query } = this.props
+    const { rides, isToggleOn, query, filteredRides } = this.props
     let sidebarClass = isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'
-    let filteredRides
-
-    if (query) {
-      const match = new RegExp(escapeRegExp(query), 'i')
-      filteredRides = rides.filter((ride) => match.test(ride.title))
-    } else {
-      filteredRides = rides
-    }
-
-    filteredRides.sort(sortBy('title'))
 
     return (
       <div id="sidebar" className={sidebarClass}>
