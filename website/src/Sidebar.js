@@ -47,6 +47,7 @@ class Sidebar extends Component {
           {filteredRides.length !== rides.length &&
             (<div className="location-total">
               <span>Showing {filteredRides.length} of {rides.length} attractions</span>
+              <button className="clearBtn" onClick={this.props.clearQuery}>Show All</button>
             </div>)
           }
           {filteredRides.map((ride, index) => (
