@@ -16,12 +16,12 @@ class Sidebar extends Component {
             type='text'
             value={query}
             name='search'
-            placeholder='Filter results'
+            placeholder='Filter by name'
             className="input"
             onChange={(e) => this.props.updateQuery(e.target.value)}
           />
 
-          <select className="select">
+          <select className="select" defaultValue="select">
             <option disabled value="select">Filter by park...</option>
             <option value="all">All</option>
             <option value="disneyland">Disneyland Park</option>
