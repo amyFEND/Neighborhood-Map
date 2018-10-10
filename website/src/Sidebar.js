@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import LocationInfo from './LocationInfo'
+import escapeRegExp from 'escape-string-regexp'
+import sortBy from 'sort-by'
 import './App.css'
 import './Responsive.css'
 
