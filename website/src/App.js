@@ -10,6 +10,7 @@ class App extends Component {
     super(props)
     this.state = {
       isToggleOn: true,
+      query: '',
       rides: [
         {
           title: "Peter Pan's Flight",
@@ -134,6 +135,7 @@ class App extends Component {
       ]
     };
     this.handleClick = this.handleClick.bind(this);
+    this.updateQuery = this.updateQuery.bind(this);
   }
 
   handleClick() {
@@ -142,8 +144,13 @@ class App extends Component {
     }));
   }
 
+  updateQuery = (query) => {
+    this.setState({ query })
+    console.log(query)
+  }
+
   render() {
-    const { rides } = this.state
+    const { rides, query } = this.state
     let hamburgerClass = this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'
     let sidebarToggle = this.state.isToggleOn ? false : true
 
@@ -159,6 +166,8 @@ class App extends Component {
         <Sidebar
           isToggleOn={sidebarToggle}
           rides={rides}
+          query={query}
+          updateQuery={this.updateQuery}
         />
 
         <MapContainer

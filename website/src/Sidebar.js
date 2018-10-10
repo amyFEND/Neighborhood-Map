@@ -5,7 +5,7 @@ import './Responsive.css'
 
 class Sidebar extends Component {
   render() {
-    const { rides, isToggleOn } = this.props
+    const { rides, isToggleOn, query } = this.props
     let sidebarClass = isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'
 
     return (
@@ -14,9 +14,11 @@ class Sidebar extends Component {
         <div className="sidebarOptns">
           <input
             type='text'
+            value={query}
             name='search'
             placeholder='Filter results'
             className="input"
+            onChange={(e) => this.props.updateQuery(e.target.value)}
           />
 
           <select className="select">
