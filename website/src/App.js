@@ -190,6 +190,7 @@ class App extends Component {
 
         <MapContainer
           rides={rides}
+          filteredRides={filteredRides}
         />
       </div>
     );

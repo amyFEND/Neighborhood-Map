@@ -3,11 +3,11 @@ import Map from './Map'
 
 class MapContainer extends Component {
   render() {
-    const { rides } = this.props
+    const { rides, filteredRides } = this.props
 
     return (
       <map className="map-container">
-        <Map rides={rides} />
+        <Map rides={rides} filteredRides={filteredRides} />
       </map>
     )
   }

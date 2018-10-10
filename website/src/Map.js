@@ -176,7 +176,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   >
     {props.isMarkerShown && <Marker icon={MainMarker} position={{ lat: centerMarker.lat, lng: centerMarker.lng }} title={centerMarker.title} />}
     { /* TODO: get custom icons for markers */ }
-    {props.rides.map((ride, index) => (
+    {props.filteredRides.map((ride, index) => (
         <Marker
             key={index}
             icon={RideMarker}
@@ -189,7 +189,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
 class Map extends Component {
   render() {
-    const { rides } = this.props
+    const { rides, filteredRides } = this.props
 
     return (
       <MyMapComponent
@@ -199,6 +199,7 @@ class Map extends Component {
         containerElement={<div style={{ height: `calc(100vh - 95px)` }} />}
         mapElement={<div style={{ height: `100%` }} />}
         rides={rides}
+        filteredRides={filteredRides}
       />
     )
   }
