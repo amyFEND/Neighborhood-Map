@@ -7,7 +7,7 @@ class MapContainer extends Component {
 
     return (
       <map className="map-container">
-        <Map rides={rides} filteredRides={filteredRides} />
+        <Map rides={rides} filteredRides={filteredRides} markerClicked={this.props.markerClicked} />
       </map>
     )
   }

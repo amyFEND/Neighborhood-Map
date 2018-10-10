@@ -182,6 +182,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
             icon={RideMarker}
             position={ride.location}
             title={ride.title}
+            onClick={props.markerClicked.bind(this,ride)}
         />
     ))}
   </GoogleMap>
@@ -200,6 +201,7 @@ class Map extends Component {
         mapElement={<div style={{ height: `100%` }} />}
         rides={rides}
         filteredRides={filteredRides}
+        markerClicked={this.props.markerClicked}
       />
     )
   }

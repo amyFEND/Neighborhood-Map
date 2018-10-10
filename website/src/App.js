@@ -139,12 +139,17 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.updateQuery = this.updateQuery.bind(this);
     this.clearQuery = this.clearQuery.bind(this);
+    this.markerClicked = this.markerClicked.bind(this);
   }
 
   handleClick() {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
+  }
+
+  markerClicked = (ride) => {
+    this.setState({ query: ride.title })
   }
 
   updateQuery = (query) => {
@@ -191,6 +196,7 @@ class App extends Component {
         <MapContainer
           rides={rides}
           filteredRides={filteredRides}
+          markerClicked={this.markerClicked}
         />
       </div>
     );
