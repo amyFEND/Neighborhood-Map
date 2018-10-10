@@ -44,17 +44,17 @@ class Sidebar extends Component {
         </div>
 
         <div className="locations-container">
+          {filteredRides.length !== rides.length &&
+            (<div className="location-total">
+              <span>Showing {filteredRides.length} of {rides.length} attractions</span>
+            </div>)
+          }
           {filteredRides.map((ride, index) => (
             <LocationInfo
               ride={ride}
               key={index}
             />
           ))}
-          {filteredRides.length !== rides.length &&
-            (<div className="location-total">
-              <span>Showing {filteredRides.length} of {rides.length} attractions</span>
-            </div>)
-          }
         </div>
 
         <div className="infoBtn-container">

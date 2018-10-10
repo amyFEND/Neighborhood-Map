@@ -170,7 +170,8 @@ hr {
   border: solid 1px red;
 }
 .location-total {
-  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 1.2em;
   letter-spacing: 2px;
   color: rgb(194, 130, 133);
