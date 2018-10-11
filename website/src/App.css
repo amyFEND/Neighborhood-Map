@@ -174,13 +174,14 @@ hr {
   border: solid 1px red;
 }
 .location-total {
-  height: 50px;
+  height: 60px;
   width: 90%;
   margin-right: auto;
   margin-left: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 1em;
+  line-height: 1.8em;
   letter-spacing: 2px;
   color: rgb(194, 130, 133);
   background-color: rgba(130, 194, 191, 0.9);
