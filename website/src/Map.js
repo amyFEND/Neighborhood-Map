@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 import MainMarker from './images/main-marker.png'
 import RideMarker from './images/rides-marker.png'
+import HoverMarker from './images/hover-marker.png'
 
 const mapStyles = [
     {
