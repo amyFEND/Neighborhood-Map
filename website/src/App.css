@@ -113,8 +113,8 @@ hr {
 }
 .infoBtn-container {
   position: relative;
-  top: -47px;
-  height: 50px;
+  top: -45px;
+  height: 45px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -135,7 +135,7 @@ hr {
   border: solid 1px rgb(130, 194, 191);
 }
 .locations-container {
-  height: calc(100vh - 185px);
+  height: calc(100vh - 144px);
   overflow-y: scroll;
   margin-top: -10px;
 }
