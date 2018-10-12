@@ -101,8 +101,11 @@ class App extends Component {
     this.clearQuery = this.clearQuery.bind(this);
     this.markerClicked = this.markerClicked.bind(this);
     this.infoWinClicked = this.infoWinClicked.bind(this);
-    this.checked = this.checked.bind(this);
-    this.filterItems = this.filterItems.bind(this);
+    /* ** Code for dropdown filter - work in progress **
+      ** TODO: get dropdown to filter rides list and markers **
+    */
+    // this.checked = this.checked.bind(this);
+    // this.filterItems = this.filterItems.bind(this);
   }
 
   handleClick() {
@@ -127,18 +130,21 @@ class App extends Component {
     this.setState({ query: '' })
   }
 
-  checked = (e) => {
-    this.setState({multiple: e.target.value});
-  }
-  filterItems = (val, type) => {
-     switch (type) {
-      case 'park':
-        this.setState({park: val});
-        break;
-      default:
-        break;
-    }
-  }
+    /* ** Code for dropdown filter - work in progress **
+      ** TODO: get dropdown to filter rides list and markers **
+    */
+    // checked = (e) => {
+    //   this.setState({multiple: e.target.value});
+    // }
+    // filterItems = (val, type) => {
+    //    switch (type) {
+    //     case 'park':
+    //       this.setState({park: val});
+    //       break;
+    //     default:
+    //       break;
+    //   }
+    // }
 
   render() {
     const { rides, query } = this.state
@@ -154,20 +160,23 @@ class App extends Component {
     }
     filteredRides.sort(sortBy('title'));
 
-    let filteredItems = this.state.rides;
-    let state = this.state;
-    let filterProperties = ["park"];
-    filterProperties.forEach(function(filterBy) {
-      let filterValue = state[filterBy];
-      if (filterValue) {
-        filteredItems = filteredItems.filter(function(item) {
-          return item[filterBy] === filterValue;
-        });
-      }
-    });
-    let parkArray = rides.filter((i, index) => (index < 2)).map(function(item) { return item.park });
-        parkArray.sort(sortBy(''));
-        parkArray.unshift("");
+    /* ** Code for dropdown filter - work in progress **
+      ** TODO: get dropdown to filter rides list and markers **
+    */
+    // let filteredItems = this.state.rides;
+    // let state = this.state;
+    // let filterProperties = ["park"];
+    // filterProperties.forEach(function(filterBy) {
+    //   let filterValue = state[filterBy];
+    //   if (filterValue) {
+    //     filteredItems = filteredItems.filter(function(item) {
+    //       return item[filterBy] === filterValue;
+    //     });
+    //   }
+    // });
+    // let parkArray = rides.filter((i, index) => (index < 2)).map(function(item) { return item.park });
+    //     parkArray.sort(sortBy(''));
+    //     parkArray.unshift("");
 
     return (
       <div className="App">
@@ -186,11 +195,13 @@ class App extends Component {
           updateQuery={this.updateQuery}
           clearQuery={this.clearQuery}
           infoWinClicked={this.infoWinClicked}
-
-          data={rides}
-          parkOptions={parkArray}
-          changeOption={this.filterItems}
-          filteredItems={filteredItems}
+          /* ** Code for dropdown filter - work in progress **
+            ** TODO: get dropdown to filter rides list and markers **
+          */
+          // data={rides}
+          // parkOptions={parkArray}
+          // changeOption={this.filterItems}
+          // filteredItems={filteredItems}
         />
 
         <MapContainer
