@@ -2,7 +2,12 @@ import React, { Component } from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 import MainMarker from './images/main-marker.png'
 import RideMarker from './images/rides-marker.png'
-import HoverMarker from './images/hover-marker.png'
+
+// import HoverMarker from './images/hover-marker.png'
+/*
+  ** TODO: figure out how to change marker icon on hover **
+  ** TODO: figure out how to show infoWindow on marker hover **
+*/
 
 const mapStyles = [
     {
