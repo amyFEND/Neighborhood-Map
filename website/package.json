@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://amyfend.github.io/Neighborhood-Map/",
   "dependencies": {
+    "@types/markerclustererplus": "^2.1.33",
+    "@types/react": "^15.6.19",
+    "ajv": "^6.5.4",
     "escape-string-regexp": "^1.0.5",
     "gh-pages": "^2.0.0",
     "google-maps-react": "^2.0.2",
