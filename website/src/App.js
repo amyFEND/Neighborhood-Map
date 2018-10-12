@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       isToggleOn: true,
       query: '',
+      multiple: false,
       rides: [
               {
                 title: "Peter Pan's Flight",
@@ -100,6 +101,8 @@ class App extends Component {
     this.clearQuery = this.clearQuery.bind(this);
     this.markerClicked = this.markerClicked.bind(this);
     this.infoWinClicked = this.infoWinClicked.bind(this);
+    this.checked = this.checked.bind(this);
+    this.filterItems = this.filterItems.bind(this);
   }
 
   handleClick() {
@@ -124,6 +127,19 @@ class App extends Component {
     this.setState({ query: '' })
   }
 
+  checked = (e) => {
+    this.setState({multiple: e.target.value});
+  }
+  filterItems = (val, type) => {
+     switch (type) {
+      case 'park':
+        this.setState({park: val});
+        break;
+      default:
+        break;
+    }
+  }
+
   render() {
     const { rides, query } = this.state
     let hamburgerClass = this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'
@@ -136,8 +152,22 @@ class App extends Component {
     } else {
       filteredRides = rides
     }
+    filteredRides.sort(sortBy('title'));
 
-    filteredRides.sort(sortBy('title'))
+    let filteredItems = this.state.rides;
+    let state = this.state;
+    let filterProperties = ["park"];
+    filterProperties.forEach(function(filterBy) {
+      let filterValue = state[filterBy];
+      if (filterValue) {
+        filteredItems = filteredItems.filter(function(item) {
+          return item[filterBy] === filterValue;
+        });
+      }
+    });
+    let parkArray = rides.filter((i, index) => (index < 2)).map(function(item) { return item.park });
+        parkArray.sort(sortBy(''));
+        parkArray.unshift("");
 
     return (
       <div className="App">
@@ -156,6 +186,11 @@ class App extends Component {
           updateQuery={this.updateQuery}
           clearQuery={this.clearQuery}
           infoWinClicked={this.infoWinClicked}
+
+          data={rides}
+          parkOptions={parkArray}
+          changeOption={this.filterItems}
+          filteredItems={filteredItems}
         />
 
         <MapContainer

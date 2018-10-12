@@ -21,12 +21,18 @@ class Sidebar extends Component {
             onChange={(e) => this.props.updateQuery(e.target.value)}
           />
 
-          <select className="select" defaultValue="select">
-            <option disabled value="select">Filter by park...</option>
-            <option value="all">All</option>
-            <option value="disneyland">Disneyland Park</option>
-            <option value="californiaAdventure">Disney California Adventure</option>
-          </select>
+          {
+          /*
+            ** TODO: get dropdown to filter rides list and markers **
+              NOTE: when adding back in change in App.css: .locations-container { height: calc(100vh - 185px); } **
+          */
+          // <select className="select" defaultValue="select" onChange={() => this.props.changeOption(this, 'park')}>
+          //   <option disabled value="select">Filter by park...</option>
+          //   {this.props.parkOptions.map(function(option, index) {
+          //     return ( <option key={index} value={option}>{option === "" ? 'All' : option}</option> )
+          //   })}
+          // </select>
+          }
 
           <hr />
         </div>
@@ -38,10 +44,10 @@ class Sidebar extends Component {
               <button className="clearBtn" onClick={this.props.clearQuery}>Show All</button>
             </div>)
           }
-          {filteredRides.map((ride, index) => (
+          {filteredRides.map((ride) => (
             <LocationInfo
               ride={ride}
-              key={index}
+              key={ride.id}
               infoWinClicked={this.props.infoWinClicked}
             />
           ))}
