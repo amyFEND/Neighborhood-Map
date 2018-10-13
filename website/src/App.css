@@ -1,5 +1,5 @@
 body, .App {
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Shadows Into Light Two', cursive;
 }
 
 .App {
@@ -122,14 +122,15 @@ hr {
   background-image: linear-gradient(to top, rgba(190, 130, 133, 1),rgba(190, 130, 133, 0));
 }
 .infoBtn {
-  height: 30px;
-  width: 60px;
+  height: 35px;
+  width: 70px;
   display: flex;
   justify-content: center;
-  font-size: 1em;
-  font-weight: bolder;
+  line-height: 1em;
+  font-size: 1.5em;
+  font-weight: 900;
   font-family: inherit;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: rgb(255, 255, 255);
   background-color: rgb(130, 194, 191);
   border: solid 1px rgb(130, 194, 191);
