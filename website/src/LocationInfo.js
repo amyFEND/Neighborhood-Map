@@ -6,7 +6,9 @@ class LocationInfo extends Component {
 
     return(
       <div className="location-info" onClick={this.props.infoWinClicked.bind(this,ride)}>
-        <span className="location-info-header">{ride.title}</span>
+        <div className="location-info-header">
+          <span>{ride.title}</span>
+        </div>
 
         <div className="location-details">
           <span>Location: {ride.park}</span><br />

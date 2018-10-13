@@ -144,7 +144,7 @@ hr {
 /* *** Location Info Box *** */
 .location-info {
   width: 300px;
-  height: 200px;
+  height: 185px;
   max-width: 90%;
   background-color: rgba(255, 255, 255, 0.9);
   border: solid 3px  rgba(194, 159, 130, 0.8);
@@ -161,9 +161,15 @@ hr {
   border: solid 3px  rgba(130, 194, 191, 0.9);
 }
 .location-info-header {
+  height: 55px;
   font-size: 1.2em;
   letter-spacing: 2px;
+  vertical-align: middle;
   color: rgb(130, 194, 191);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .location-details {
   display: block;
