@@ -202,7 +202,7 @@ class Map extends Component {
       <MyMapComponent
         isMarkerShown
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA8HDeuxQegHPX6FU5jN-_LU75rDIXSfhM"
-        loadingElement={<div style={{ height: `100%` }}>Loading...</div>}
+        loadingElement={<div style={{ height: `100%`, fontSize:`3em`, lineHeight:`4em`, color: `rgb(130,194,191)` }}>Loading...</div>}
         containerElement={<div style={{ height: `calc(100vh - 95px)` }} />}
         mapElement={<div style={{ height: `100%` }} />}
         rides={rides}
