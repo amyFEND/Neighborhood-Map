@@ -29,7 +29,6 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     defaultOptions={{ styles: mapStyles, mapTypeControl: false }}
   >
     {props.isMarkerShown && <Marker icon={MainMarker} position={{ lat: centerMarker.lat, lng: centerMarker.lng }} title={centerMarker.title} />}
-    { /* TODO: get custom icons for markers */ }
     {props.filteredRides.map((ride, index) => (
         <Marker
             key={index}
