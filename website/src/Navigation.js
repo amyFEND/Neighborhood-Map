@@ -4,7 +4,7 @@ class Navigation extends Component {
   render() {
     return (
       <header className="App-header">
-        <h1 className="App-title">Neighborhood Map</h1>
+        <h1 className="App-title">{`Amy's Favorite Rides`}</h1>
       </header>
     )
   }
