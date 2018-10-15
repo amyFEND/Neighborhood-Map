@@ -5,7 +5,7 @@ import './Responsive.css'
 
 class Sidebar extends Component {
   render() {
-    const { rides, isToggleOn, query, filteredRides, isHidden } = this.props
+    const { rides, isToggleOn, query, updateQuery, clearQuery, infoWinClicked, filteredRides, isHidden } = this.props
     let sidebarClass = isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'
 
     return (
@@ -18,7 +18,7 @@ class Sidebar extends Component {
             name='search'
             placeholder='Filter by name'
             className="input"
-            onChange={(e) => this.props.updateQuery(e.target.value)}
+            onChange={(e) => updateQuery(e.target.value)}
           />
 
           {
@@ -41,14 +41,14 @@ class Sidebar extends Component {
           {filteredRides.length !== rides.length &&
             (<div className="location-total">
               <span>Showing {filteredRides.length} of {rides.length} attractions</span>
-              <button className="clearBtn" onClick={this.props.clearQuery}>Show All</button>
+              <button className="clearBtn" onClick={clearQuery}>Show All</button>
             </div>)
           }
           {filteredRides.map((ride) => (
             <LocationInfo
               ride={ride}
               key={ride.id}
-              infoWinClicked={this.props.infoWinClicked}
+              infoWinClicked={infoWinClicked}
               isHidden={isHidden}
             />
           ))}

@@ -196,7 +196,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
 class Map extends Component {
   render() {
-    const { rides, filteredRides } = this.props
+    const { rides, filteredRides, markerClicked } = this.props
 
     return (
       <MyMapComponent
@@ -207,7 +207,7 @@ class Map extends Component {
         mapElement={<div style={{ height: `100%` }} />}
         rides={rides}
         filteredRides={filteredRides}
-        markerClicked={this.props.markerClicked}
+        markerClicked={markerClicked}
       />
     )
   }
