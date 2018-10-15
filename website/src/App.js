@@ -12,6 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       isToggleOn: true,
+      isHidden: true,
       query: '',
       multiple: false,
       rides: [
@@ -57,18 +58,24 @@ class App extends Component {
 
   markerClicked = (ride) => {
     this.setState({ query: ride.title })
+    this.setState({ isHidden: !this.state.isHidden })
   }
 
   infoWinClicked = (ride) => {
     this.setState({ query: ride.title })
+    this.setState({ isHidden: !this.state.isHidden })
   }
 
   updateQuery = (query) => {
     this.setState({ query })
+    if (query === '') {
+      this.setState( { isHidden: true })
+    }
   }
 
   clearQuery = (query) => {
     this.setState({ query: '' })
+    this.setState({ isHidden: true})
   }
 
     /* ** Code for dropdown filter - work in progress **
@@ -136,6 +143,7 @@ class App extends Component {
           updateQuery={this.updateQuery}
           clearQuery={this.clearQuery}
           infoWinClicked={this.infoWinClicked}
+          isHidden={this.state.isHidden}
           /* ** Code for dropdown filter - work in progress **
             ** TODO: get dropdown to filter rides list and markers **
           */

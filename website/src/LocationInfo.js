@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class LocationInfo extends Component {
   render() {
-    const { ride } = this.props
+    const { ride, isHidden } = this.props
     const rideTypes = ride.type.map((type, i) => (<li key={i}>{type}</li>))
 
     return(
@@ -11,6 +11,7 @@ class LocationInfo extends Component {
           <span>{ride.title}</span>
         </div>
 
+        {!isHidden &&
         <div className="location-details">
           <span><strong>Park:</strong> {ride.park}</span><br />
           <span><strong>Land:</strong> {ride.land}</span><br />
@@ -18,6 +19,7 @@ class LocationInfo extends Component {
           <span><strong>FASTPASS:</strong> {ride.fastpass === true ? 'Yes' : 'No'}</span><br />
           <ul className="location-ul">{rideTypes}</ul>
         </div>
+      }
       </div>
     )
   }

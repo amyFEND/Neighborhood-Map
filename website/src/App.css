@@ -144,7 +144,7 @@ hr {
 /* *** Location Info Box *** */
 .location-info {
   width: 300px;
-  height: 185px;
+  max-height: 100%;
   max-width: 90%;
   background-color: rgba(255, 255, 255, 0.9);
   border: solid 3px  rgba(194, 159, 130, 0.8);
