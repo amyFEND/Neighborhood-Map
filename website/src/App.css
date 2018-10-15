@@ -1,5 +1,5 @@
 body, .App {
-  font-family: 'Shadows Into Light Two', cursive;
+  font-family: 'waltograph','Shadows Into Light Two', cursive;
 }
 
 .App {
@@ -18,7 +18,7 @@ body, .App {
 }
 
 .App-title {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bolder;
   letter-spacing: 3px;
   flex: 1;
@@ -94,7 +94,7 @@ body, .App {
 .input {
   width: 90%;
   font-size: 1.1em;
-  font-family: inherit;
+  font-family: 'Shadows Into Light Two';
   margin-top: 10px;
   border-color: rgb(194, 159, 130);
 }
@@ -165,7 +165,7 @@ hr {
 }
 .location-info-header {
   height: 55px;
-  font-size: 1.2em;
+  font-size: 1.5em;
   letter-spacing: 2px;
   vertical-align: middle;
   color: rgb(130, 194, 191);
@@ -181,6 +181,7 @@ hr {
   height: 50%;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Shadows Into Light Two';
 }
 .location-ul {
   list-style: none;
@@ -205,6 +206,7 @@ hr {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 1em;
+  font-family: 'Shadows Into Light Two';
   line-height: 1.8em;
   letter-spacing: 2px;
   color: rgb(194, 130, 133);
@@ -216,7 +218,7 @@ hr {
   display: flex;
   justify-content: center;
   font-size: 1em;
-  font-family: inherit;
+  font-family: 'Shadows Into Light Two';
   letter-spacing: 2px;
   cursor: pointer;
   margin-left: auto;
