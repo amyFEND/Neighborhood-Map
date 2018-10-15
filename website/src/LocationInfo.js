@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 class LocationInfo extends Component {
   render() {
     const { ride } = this.props
+    const rideTypes = ride.type.map((type, i) => (<li key={i}>{type}</li>))
 
     return(
       <div className="location-info" onClick={this.props.infoWinClicked.bind(this,ride)}>
@@ -11,9 +12,11 @@ class LocationInfo extends Component {
         </div>
 
         <div className="location-details">
-          <span>Location: {ride.park}</span><br />
-          <span>Ride Details TBD</span><br />
-          <span>Street View Image</span>
+          <span><strong>Park:</strong> {ride.park}</span><br />
+          <span><strong>Land:</strong> {ride.land}</span><br />
+          <span><strong>Height:</strong> {ride.height.length === 1 ? 'Any height' : `${ride.height[0]}in (${ride.height[1]}cm) or taller`}</span><br />
+          <span><strong>FASTPASS:</strong> {ride.fastpass === true ? 'Yes' : 'No'}</span><br />
+          <ul className="location-ul">{rideTypes}</ul>
         </div>
       </div>
     )

@@ -181,7 +181,21 @@ hr {
   height: 50%;
   margin-left: auto;
   margin-right: auto;
-  border: solid 1px red;
+}
+.location-ul {
+  list-style: none;
+  padding-left: 0;
+  display: inline;
+  font-size: 0.8em;
+}
+.location-ul li {
+  display: inline;
+}
+.location-ul li:after {
+  content: ", "
+}
+.location-ul li:last-child:after {
+  content: ""
 }
 .location-total {
   height: 60px;
