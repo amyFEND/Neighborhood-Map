@@ -43,7 +43,7 @@ class App extends Component {
     this.updateQuery = this.updateQuery.bind(this);
     this.clearQuery = this.clearQuery.bind(this);
     this.markerClicked = this.markerClicked.bind(this);
-    this.infoWinClicked = this.infoWinClicked.bind(this);
+    this.infoClicked = this.infoClicked.bind(this);
     /* ** Code for dropdown filter - work in progress **
       ** TODO: get dropdown to filter rides list and markers **
     */
@@ -65,8 +65,8 @@ class App extends Component {
     this.setState({ isOpen: !this.state.isOpen })
   }
 
-  infoWinClicked = (ride) => {
   /* *** Selects location info div on user click, hides all other location info dix, shows InfoWindow *** */
+  infoClicked = (ride) => {
     this.setState({ query: ride.title })
     this.setState({ isHidden: !this.state.isHidden })
     this.setState({ isOpen: !this.state.isOpen })
@@ -162,7 +162,7 @@ class App extends Component {
           query={query}
           updateQuery={this.updateQuery}
           clearQuery={this.clearQuery}
-          infoWinClicked={this.infoWinClicked}
+          infoClicked={this.infoClicked}
           isHidden={this.state.isHidden}
           /* ** Code for dropdown filter - work in progress **
             ** TODO: get dropdown to filter rides list and markers **

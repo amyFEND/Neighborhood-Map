@@ -5,7 +5,7 @@ import './Responsive.css'
 
 class Sidebar extends Component {
   render() {
-    const { rides, isToggleOn, query, updateQuery, clearQuery, infoWinClicked, filteredRides, filteredRideTypes, isHidden } = this.props
+    const { rides, isToggleOn, query, updateQuery, clearQuery, infoClicked, filteredRides, filteredRideTypes, isHidden } = this.props
     let sidebarClass = isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'
 
     return (
@@ -48,7 +48,7 @@ class Sidebar extends Component {
             <LocationInfo
               ride={ride}
               key={ride.id}
-              infoWinClicked={infoWinClicked}
+              infoClicked={infoClicked}
               isHidden={isHidden}
             />
           ))}
@@ -56,7 +56,7 @@ class Sidebar extends Component {
             <LocationInfo
               ride={ride}
               key={ride.id}
-              infoWinClicked={infoWinClicked}
+              infoClicked={infoClicked}
               isHidden={isHidden}
             />
           ))}

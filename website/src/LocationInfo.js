@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 class LocationInfo extends Component {
   render() {
-    const { ride, infoWinClicked, isHidden } = this.props
+    const { ride, infoClicked, isHidden } = this.props
     const rideTypes = ride.type.map((type, i) => (<li key={i}>{type}</li>))
 
     return(
-      <div className="location-info" onClick={infoWinClicked.bind(this,ride)}>
+      <div className="location-info" onClick={infoClicked.bind(this,ride)}>
         <div className="location-info-header">
           <span>{ride.title}</span>
         </div>
