@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       isToggleOn: true,
       isHidden: true,
+      isOpen: false,
       query: '',
       multiple: false,
       rides: [
@@ -59,6 +60,7 @@ class App extends Component {
   markerClicked = (ride) => {
     this.setState({ query: ride.title })
     this.setState({ isHidden: !this.state.isHidden })
+    this.setState({ isOpen: !this.state.isOpen })
   }
 
   infoWinClicked = (ride) => {
@@ -157,6 +159,7 @@ class App extends Component {
           rides={rides}
           filteredRides={filteredRides}
           markerClicked={this.markerClicked}
+          isOpen={this.state.isOpen}
         />
       </div>
     );
