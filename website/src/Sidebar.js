@@ -7,10 +7,10 @@ class Sidebar extends Component {
   render() {
     const { rides, isToggleOn, query, updateQuery, clearQuery, infoClicked, filteredRides, filteredRideTypes, isHidden } = this.props
     let sidebarClass = isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'
-
-    let concat = filteredRides.concat(filteredRideTypes) // join filteredRides and filteredRideTypes arrays
-    let set = new Set(concat) // filter out duplicates
-    let allRides = [...set] // extend Set to new Array
+    // join filteredRides and filteredRideTypes arrays, filters duplicates, creates new array
+    let concat = filteredRides.concat(filteredRideTypes)
+    let set = new Set(concat)
+    let allRides = [...set]
 
 
     return (
@@ -18,12 +18,12 @@ class Sidebar extends Component {
 
         <div className="sidebarOptns">
           <input
-            type='text'
-            value={query}
-            name='search'
-            placeholder='Filter by name'
-            className="input"
-            onChange={(e) => updateQuery(e.target.value)}
+              type='text'
+              value={query}
+              name='search'
+              placeholder='Filter by name'
+              className="input"
+              onChange={(e) => updateQuery(e.target.value)}
           />
 
           {
@@ -43,21 +43,26 @@ class Sidebar extends Component {
         </div>
 
         <div className="locations-container">
-          {query &&
-            (<div className="location-total">
-              <span>Showing {allRides.length} of {rides.length} attractions</span>
-              <button className="clearBtn" onClick={clearQuery}>Show All</button>
-            </div>)
+          {
+            query &&
+            (
+              <div className="location-total">
+                <span>Showing {allRides.length} of {rides.length} attractions</span>
+                <button className="clearBtn" onClick={clearQuery}>Show All</button>
+              </div>
+            )
           }
 
-          {allRides.map((ride) => (
-            <LocationInfo
-              ride={ride}
-              key={ride.id}
-              infoClicked={infoClicked}
-              isHidden={isHidden}
-            />
-          ))}
+          {
+            allRides.map((ride) => (
+              <LocationInfo
+                  ride={ride}
+                  key={ride.id}
+                  infoClicked={infoClicked}
+                  isHidden={isHidden}
+              />
+            ))
+          }
         </div>
 
         <div className="infoBtn-container">
