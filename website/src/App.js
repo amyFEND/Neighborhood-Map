@@ -51,12 +51,14 @@ class App extends Component {
     // this.filterItems = this.filterItems.bind(this);
   }
 
+  /* *** Toggles Sidebar *** */
   handleClick() {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
   }
 
+  /* *** Selects marker based on user click, hides all other markers, shows InfoWindow *** */
   markerClicked = (ride) => {
     this.setState({ query: ride.title })
     this.setState({ isHidden: !this.state.isHidden })
@@ -64,18 +66,19 @@ class App extends Component {
   }
 
   infoWinClicked = (ride) => {
+  /* *** Selects location info div on user click, hides all other location info dix, shows InfoWindow *** */
     this.setState({ query: ride.title })
     this.setState({ isHidden: !this.state.isHidden })
     this.setState({ isOpen: !this.state.isOpen })
   }
 
+  /* *** Query functions *** */
   updateQuery = (query) => {
     this.setState({ query })
     if (query === '') {
       this.setState( { isHidden: true })
     }
   }
-
   clearQuery = (query) => {
     this.setState({ query: '' })
     this.setState({ isHidden: true})
@@ -103,9 +106,9 @@ class App extends Component {
     const { rides, query } = this.state
     let hamburgerClass = this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'
     let sidebarToggle = this.state.isToggleOn ? false : true
-    let filteredRides
-    let filteredRideTypes
 
+    /* *** Filters by Ride Title *** */
+    let filteredRides
     if (query) {
       const match = new RegExp(escapeRegExp(query), 'i')
       filteredRides = rides.filter((ride) => match.test(ride.title))
@@ -114,6 +117,8 @@ class App extends Component {
     }
     filteredRides.sort(sortBy('title'));
 
+    /* *** Filters by Ride Type *** */
+    let filteredRideTypes
     if (query) {
       const match = new RegExp(escapeRegExp(query), 'i')
       filteredRideTypes = rides.filter((ride) => match.test(ride.type))

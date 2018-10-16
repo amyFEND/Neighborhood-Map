@@ -16,6 +16,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     defaultCenter={props.center}
     defaultOptions={{ styles: mapStyles, mapTypeControl: false }}
   >
+    {/* *** Center/Main Marker *** */}
     {
       props.isMarkerShown &&
       <Marker
@@ -44,6 +45,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     </Marker>
     }
 
+    {/* *** Ride Markers, filtered by title *** */}
     {
       props.filteredRides.map((ride, index) => (
         <Marker
@@ -74,6 +76,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
       ))
     }
 
+    {/* *** Ride Markers, filtered by ride type *** */}
     {
       props.filteredRideTypes.map((ride, index) => (
         <Marker
