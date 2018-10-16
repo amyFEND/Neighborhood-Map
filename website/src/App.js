@@ -78,6 +78,8 @@ class App extends Component {
   clearQuery = (query) => {
     this.setState({ query: '' })
     this.setState({ isHidden: true})
+    this.setState({ isOpen: false })
+
   }
 
     /* ** Code for dropdown filter - work in progress **
