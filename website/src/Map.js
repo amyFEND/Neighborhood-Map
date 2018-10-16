@@ -45,40 +45,9 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     </Marker>
     }
 
-    {/* *** Ride Markers, filtered by title *** */}
+    {/* *** Ride Markers *** */}
     {
-      props.filteredRides.map((ride, index) => (
-        <Marker
-            key={index}
-            icon={RideMarker}
-            position={ride.location}
-            title={ride.title}
-            onClick={props.markerClicked.bind(this,ride)}
-        >
-          {
-            props.isOpen &&
-            <InfoWindow
-                onCloseClick={props.toggleOpen}
-                options={{
-                  closeBoxURL: ``,
-                  enableEventPropagation: true,
-                  alignBottom: true
-                }}
-            >
-              <div style={{ maxWidth:`100%`, opacity: 0.75, padding: `12px` }}>
-                <div style={{ fontFamily: `waltograph`, fontSize: `2em`, color: `#82C2BF`, opacity: 1 }}>
-                  {ride.title}
-                </div>
-              </div>
-            </InfoWindow>
-          }
-        </Marker>
-      ))
-    }
-
-    {/* *** Ride Markers, filtered by ride type *** */}
-    {
-      props.filteredRideTypes.map((ride, index) => (
+      props.allRides.map((ride, index) => (
         <Marker
             key={index}
             icon={RideMarker}
@@ -127,9 +96,8 @@ class Map extends Component {
   }
 
   render() {
-    const { rides, filteredRides, filteredRideTypes, markerClicked, isOpen } = this.props
+    const { rides, allRides, markerClicked, isOpen } = this.props
     let quote
-
 
     return (
       <MyMapComponent
@@ -140,8 +108,7 @@ class Map extends Component {
         containerElement={<div style={{ height: `calc(100vh - 95px)` }} />}
         mapElement={<div style={{ height: `100%` }} />}
         rides={rides}
-        filteredRides={filteredRides}
-        filteredRideTypes={filteredRideTypes}
+        allRides={allRides}
         markerClicked={markerClicked}
         isMainOpen={this.state.isMainOpen}
         toggleMainOpen={this.toggleMainOpen}

@@ -5,13 +5,8 @@ import './Responsive.css'
 
 class Sidebar extends Component {
   render() {
-    const { rides, isToggleOn, query, updateQuery, clearQuery, infoClicked, filteredRides, filteredRideTypes, isHidden } = this.props
+    const { rides, allRides, isToggleOn, query, updateQuery, clearQuery, infoClicked, isHidden } = this.props
     let sidebarClass = isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'
-    // join filteredRides and filteredRideTypes arrays, filters duplicates, creates new array
-    let concat = filteredRides.concat(filteredRideTypes)
-    let set = new Set(concat)
-    let allRides = [...set]
-
 
     return (
       <div id="sidebar" className={sidebarClass}>

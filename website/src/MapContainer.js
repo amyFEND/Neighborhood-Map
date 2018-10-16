@@ -3,14 +3,13 @@ import Map from './Map'
 
 class MapContainer extends Component {
   render() {
-    const { rides, filteredRides, filteredRideTypes, markerClicked, isOpen } = this.props
+    const { rides, allRides, markerClicked, isOpen } = this.props
 
     return (
       <map className="map-container">
         <Map
             rides={rides}
-            filteredRides={filteredRides}
-            filteredRideTypes={filteredRideTypes}
+            allRides={allRides}
             markerClicked={markerClicked}
             isOpen={isOpen}
         />

@@ -115,7 +115,6 @@ class App extends Component {
     } else {
       filteredRides = rides
     }
-    filteredRides.sort(sortBy('title'));
 
     /* *** Filters by Ride Type *** */
     let filteredRideTypes
@@ -125,7 +124,12 @@ class App extends Component {
     } else {
       filteredRideTypes = []
     }
-    filteredRideTypes.sort(sortBy('title'));
+
+    /* *** Joins aforementioned arrays, removes duplicates, returns new array *** */
+    let concat = filteredRides.concat(filteredRideTypes)
+    let set = new Set(concat)
+    let allRides = [...set]
+    allRides.sort(sortBy('title'))
 
     /* ** Code for dropdown filter - work in progress **
       ** TODO: get dropdown to filter rides list and markers **
@@ -157,8 +161,7 @@ class App extends Component {
         <Sidebar
           isToggleOn={sidebarToggle}
           rides={rides}
-          filteredRides={filteredRides}
-          filteredRideTypes={filteredRideTypes}
+          allRides={allRides}
           query={query}
           updateQuery={this.updateQuery}
           clearQuery={this.clearQuery}
@@ -175,8 +178,7 @@ class App extends Component {
 
         <MapContainer
           rides={rides}
-          filteredRides={filteredRides}
-          filteredRideTypes={filteredRideTypes}
+          allRides={allRides}
           markerClicked={this.markerClicked}
           isOpen={this.state.isOpen}
         />
