@@ -66,6 +66,7 @@ class App extends Component {
   infoWinClicked = (ride) => {
     this.setState({ query: ride.title })
     this.setState({ isHidden: !this.state.isHidden })
+    this.setState({ isOpen: !this.state.isOpen })
   }
 
   updateQuery = (query) => {
