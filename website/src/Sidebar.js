@@ -8,6 +8,11 @@ class Sidebar extends Component {
     const { rides, isToggleOn, query, updateQuery, clearQuery, infoClicked, filteredRides, filteredRideTypes, isHidden } = this.props
     let sidebarClass = isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'
 
+    let concat = filteredRides.concat(filteredRideTypes) // join filteredRides and filteredRideTypes arrays
+    let set = new Set(concat) // filter out duplicates
+    let allRides = [...set] // extend Set to new Array
+
+
     return (
       <div id="sidebar" className={sidebarClass}>
 
@@ -38,21 +43,14 @@ class Sidebar extends Component {
         </div>
 
         <div className="locations-container">
-          {filteredRides.length !== rides.length &&
+          {query &&
             (<div className="location-total">
-              <span>Showing {filteredRides.length} of {rides.length} attractions</span>
+              <span>Showing {allRides.length} of {rides.length} attractions</span>
               <button className="clearBtn" onClick={clearQuery}>Show All</button>
             </div>)
           }
-          {filteredRides.map((ride) => (
-            <LocationInfo
-              ride={ride}
-              key={ride.id}
-              infoClicked={infoClicked}
-              isHidden={isHidden}
-            />
-          ))}
-          {filteredRideTypes.map((ride) => (
+
+          {allRides.map((ride) => (
             <LocationInfo
               ride={ride}
               key={ride.id}
