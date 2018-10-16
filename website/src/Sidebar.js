@@ -21,7 +21,7 @@ class Sidebar extends Component {
               type='text'
               value={query}
               name='search'
-              placeholder='Filter by name'
+              placeholder={`Search by name or ride type`}
               className="input"
               onChange={(e) => updateQuery(e.target.value)}
           />
