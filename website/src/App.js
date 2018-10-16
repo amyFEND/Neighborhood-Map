@@ -104,6 +104,7 @@ class App extends Component {
     let hamburgerClass = this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'
     let sidebarToggle = this.state.isToggleOn ? false : true
     let filteredRides
+    let filteredRideTypes
 
     if (query) {
       const match = new RegExp(escapeRegExp(query), 'i')
@@ -112,6 +113,14 @@ class App extends Component {
       filteredRides = rides
     }
     filteredRides.sort(sortBy('title'));
+
+    if (query) {
+      const match = new RegExp(escapeRegExp(query), 'i')
+      filteredRideTypes = rides.filter((ride) => match.test(ride.type))
+    } else {
+      filteredRideTypes = []
+    }
+    filteredRideTypes.sort(sortBy('title'));
 
     /* ** Code for dropdown filter - work in progress **
       ** TODO: get dropdown to filter rides list and markers **
@@ -144,6 +153,7 @@ class App extends Component {
           isToggleOn={sidebarToggle}
           rides={rides}
           filteredRides={filteredRides}
+          filteredRideTypes={filteredRideTypes}
           query={query}
           updateQuery={this.updateQuery}
           clearQuery={this.clearQuery}
@@ -161,6 +171,7 @@ class App extends Component {
         <MapContainer
           rides={rides}
           filteredRides={filteredRides}
+          filteredRideTypes={filteredRideTypes}
           markerClicked={this.markerClicked}
           isOpen={this.state.isOpen}
         />
