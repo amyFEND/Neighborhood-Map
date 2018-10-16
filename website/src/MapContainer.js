@@ -10,8 +10,8 @@ class MapContainer extends Component {
         <Map
             rides={rides}
             allRides={allRides}
-            markerClicked={markerClicked}
             isOpen={isOpen}
+            markerClicked={markerClicked}
         />
       </map>
     )

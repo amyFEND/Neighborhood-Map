@@ -9,12 +9,12 @@ import './Responsive.css'
 
 class App extends Component {
   constructor (props) {
-    super(props);
+    super(props)
     this.state = {
-      isToggleOn: true,
-      isHidden: true,
-      isOpen: false,
       query: '',
+      isOpen: false,
+      isHidden: true,
+      isToggleOn: true,
       multiple: false,
       rides: [
               { title: "Peter Pan's Flight", location: {lat: 33.813126, lng: -117.91888}, park: 'Disneyland', land: 'Fantasyland', height: [''], type: ['Small Drops', 'Slow Rides', 'Dark', 'Loud', '1955 Original Ride', 'Indoor'], fastpass: false, id: 'ChIJ0310NdHX3IARyeJ2xX2LRyY' },
@@ -38,38 +38,24 @@ class App extends Component {
               { title: "Mater's Junkyard Jamboree", location: {lat: 33.806489, lng: -117.919153}, park: 'Disney California Adventure', land: 'Cars Land', height: ['32', '81'], type: ['Spinning'], fastpass: false, id: 'ChIJmW1GftnX3IARWvHgfpJ7Lek' },
               { title: 'Radiator Springs Racers', location: {lat: 33.805188, lng: -117.918657}, park: 'Disney California Adventure', land: 'Cars Land', height: ['40', '102'], type: ['Small Drops', 'Thrill Rides', 'Dark', 'Loud'], fastpass: true, id: 'ChIJDZni3dvX3IAR-UgkGaAmzJA' }
             ]
-    };
-    this.handleClick = this.handleClick.bind(this);
-    this.updateQuery = this.updateQuery.bind(this);
-    this.clearQuery = this.clearQuery.bind(this);
-    this.markerClicked = this.markerClicked.bind(this);
-    this.infoClicked = this.infoClicked.bind(this);
+    }
+    this.handleClick = this.handleClick.bind(this)
+    this.updateQuery = this.updateQuery.bind(this)
+    this.clearQuery = this.clearQuery.bind(this)
+    this.markerClicked = this.markerClicked.bind(this)
+    this.infoClicked = this.infoClicked.bind(this)
     /* ** Code for dropdown filter - work in progress **
       ** TODO: get dropdown to filter rides list and markers **
     */
-    // this.checked = this.checked.bind(this);
-    // this.filterItems = this.filterItems.bind(this);
+    // this.checked = this.checked.bind(this)
+    // this.filterItems = this.filterItems.bind(this)
   }
 
   /* *** Toggles Sidebar *** */
   handleClick() {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
-    }));
-  }
-
-  /* *** Selects marker based on user click, hides all other markers, shows InfoWindow *** */
-  markerClicked = (ride) => {
-    this.setState({ query: ride.title })
-    this.setState({ isHidden: !this.state.isHidden })
-    this.setState({ isOpen: !this.state.isOpen })
-  }
-
-  /* *** Selects location info div on user click, hides all other location info dix, shows InfoWindow *** */
-  infoClicked = (ride) => {
-    this.setState({ query: ride.title })
-    this.setState({ isHidden: !this.state.isHidden })
-    this.setState({ isOpen: !this.state.isOpen })
+    }))
   }
 
   /* *** Query functions *** */
@@ -84,6 +70,20 @@ class App extends Component {
     this.setState({ isHidden: true})
     this.setState({ isOpen: false })
 
+  }
+
+  /* *** Selects marker based on user click, hides all other markers, shows InfoWindow *** */
+  markerClicked = (ride) => {
+    this.setState({ query: ride.title })
+    this.setState({ isHidden: !this.state.isHidden })
+    this.setState({ isOpen: !this.state.isOpen })
+  }
+
+  /* *** Selects location info div on user click, hides all other location info dix, shows InfoWindow *** */
+  infoClicked = (ride) => {
+    this.setState({ query: ride.title })
+    this.setState({ isHidden: !this.state.isHidden })
+    this.setState({ isOpen: !this.state.isOpen })
   }
 
     /* ** Code for dropdown filter - work in progress **
@@ -151,23 +151,21 @@ class App extends Component {
 
     return (
       <div className="App">
-        <button
-          className={hamburgerClass}
-          onClick={this.handleClick}
-        >&#x2630;</button>
+
+        <button className={hamburgerClass} onClick={this.handleClick}>&#x2630;</button>
 
         <Navigation />
 
         <Sidebar
-          isToggleOn={sidebarToggle}
-          rides={rides}
-          allRides={allRides}
-          query={query}
-          updateQuery={this.updateQuery}
-          clearQuery={this.clearQuery}
-          infoClicked={this.infoClicked}
-          isHidden={this.state.isHidden}
-          /* ** Code for dropdown filter - work in progress **
+            rides={rides}
+            allRides={allRides}
+            isToggleOn={sidebarToggle}
+            query={query}
+            updateQuery={this.updateQuery}
+            clearQuery={this.clearQuery}
+            infoClicked={this.infoClicked}
+            isHidden={this.state.isHidden}
+            /* ** Code for dropdown filter - work in progress **
             ** TODO: get dropdown to filter rides list and markers **
           */
           // data={rides}
@@ -177,10 +175,10 @@ class App extends Component {
         />
 
         <MapContainer
-          rides={rides}
-          allRides={allRides}
-          markerClicked={this.markerClicked}
-          isOpen={this.state.isOpen}
+            rides={rides}
+            allRides={allRides}
+            isOpen={this.state.isOpen}
+            markerClicked={this.markerClicked}
         />
       </div>
     );

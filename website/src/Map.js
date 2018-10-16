@@ -12,9 +12,9 @@ import RideMarker from './images/rides-marker.png'
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
-    defaultZoom={ 16 }
-    defaultCenter={props.center}
-    defaultOptions={{ styles: mapStyles, mapTypeControl: false }}
+      defaultZoom={ 16 }
+      defaultCenter={props.center}
+      defaultOptions={{ styles: mapStyles, mapTypeControl: false }}
   >
     {/* *** Center/Main Marker *** */}
     {
@@ -30,9 +30,9 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
           <InfoWindow
               onCloseClick={props.toggleMainOpen}
               options={{
-                closeBoxURL: ``,
-                enableEventPropagation: true,
-                alignBottom: true
+                  closeBoxURL: ``,
+                  enableEventPropagation: true,
+                  alignBottom: true
               }}
           >
             <div onClick={props.toggleMainOpen} style={{ width:`75px`, opacity: 0.5, padding: `12px` }}>
@@ -60,9 +60,9 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
             <InfoWindow
                 onCloseClick={props.toggleOpen}
                 options={{
-                  closeBoxURL: ``,
-                  enableEventPropagation: true,
-                  alignBottom: true
+                    closeBoxURL: ``,
+                    enableEventPropagation: true,
+                    alignBottom: true
                 }}
             >
               <div style={{ maxWidth:`100%`, opacity: 0.75, padding: `12px` }}>
@@ -101,18 +101,18 @@ class Map extends Component {
 
     return (
       <MyMapComponent
-        isMarkerShown
-        center = {{ lat: 33.8091, lng: -117.918972 }}
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA8HDeuxQegHPX6FU5jN-_LU75rDIXSfhM"
-        loadingElement={<div style={{ height: `100%`, fontSize:`3em`, lineHeight:`4em`, color: `rgb(130,194,191)` }}>Loading...</div>}
-        containerElement={<div style={{ height: `calc(100vh - 95px)` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-        rides={rides}
-        allRides={allRides}
-        markerClicked={markerClicked}
-        isMainOpen={this.state.isMainOpen}
-        toggleMainOpen={this.toggleMainOpen}
-        isOpen={isOpen}
+          isMarkerShown
+          center = {{ lat: 33.8091, lng: -117.918972 }}
+          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA8HDeuxQegHPX6FU5jN-_LU75rDIXSfhM"
+          loadingElement={<div style={{ height: `100%`, fontSize:`3em`, lineHeight:`4em`, color: `rgb(130,194,191)` }}>Loading...</div>}
+          containerElement={<div style={{ height: `calc(100vh - 95px)` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+          rides={rides}
+          allRides={allRides}
+          isOpen={isOpen}
+          markerClicked={markerClicked}
+          isMainOpen={this.state.isMainOpen}
+          toggleMainOpen={this.toggleMainOpen}
       />
     )
   }
