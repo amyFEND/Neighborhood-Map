@@ -58,7 +58,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
           {
             props.isOpen &&
             <InfoWindow
-                onCloseClick={props.toggleOpen}
+                onCloseClick={props.clearQuery}
                 options={{
                     closeBoxURL: ``,
                     enableEventPropagation: true,
@@ -83,20 +83,15 @@ class Map extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      isMainOpen: false,
       data: null
     }
-    this.toggleMainOpen = this.toggleMainOpen.bind(this)
   }
 
-  toggleMainOpen = () => {
-    this.setState(prevState => ({
-      isMainOpen: !prevState.isMainOpen
-    }));
   }
+
 
   render() {
-    const { rides, allRides, markerClicked, isOpen } = this.props
+    const { rides, allRides, markerClicked, isOpen, clearQuery, isMainOpen, toggleMainOpen } = this.props
     let quote
 
     return (
@@ -111,8 +106,9 @@ class Map extends Component {
           allRides={allRides}
           isOpen={isOpen}
           markerClicked={markerClicked}
-          isMainOpen={this.state.isMainOpen}
-          toggleMainOpen={this.toggleMainOpen}
+          clearQuery={clearQuery}
+          isMainOpen={isMainOpen}
+          toggleMainOpen={toggleMainOpen}
       />
     )
   }

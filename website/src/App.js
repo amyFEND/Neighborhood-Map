@@ -15,6 +15,7 @@ class App extends Component {
       isOpen: false,
       isHidden: true,
       isToggleOn: true,
+      isMainOpen: false,
       multiple: false,
       rides: [
               { title: "Peter Pan's Flight", location: {lat: 33.813126, lng: -117.91888}, park: 'Disneyland', land: 'Fantasyland', height: [''], type: ['Small Drops', 'Slow Rides', 'Dark', 'Loud', '1955 Original Ride', 'Indoor'], fastpass: false, id: 'ChIJ0310NdHX3IARyeJ2xX2LRyY' },
@@ -44,6 +45,7 @@ class App extends Component {
     this.clearQuery = this.clearQuery.bind(this)
     this.markerClicked = this.markerClicked.bind(this)
     this.infoClicked = this.infoClicked.bind(this)
+    this.toggleMainOpen = this.toggleMainOpen.bind(this)
     /* ** Code for dropdown filter - work in progress **
       ** TODO: get dropdown to filter rides list and markers **
     */
@@ -67,7 +69,7 @@ class App extends Component {
   }
   clearQuery = (query) => {
     this.setState({ query: '' })
-    this.setState({ isHidden: true})
+    this.setState({ isHidden: true })
     this.setState({ isOpen: false })
 
   }
@@ -84,6 +86,14 @@ class App extends Component {
     this.setState({ query: ride.title })
     this.setState({ isHidden: !this.state.isHidden })
     this.setState({ isOpen: !this.state.isOpen })
+  }
+
+  /* *** Selects Main marker *** */
+  toggleMainOpen = () => {
+    this.setState(prevState => ({ isMainOpen: !prevState.isMainOpen }))
+    this.setState({ query: '' })
+    this.setState({ isHidden: true })
+    this.setState({ isOpen: false })
   }
 
     /* ** Code for dropdown filter - work in progress **
@@ -179,6 +189,9 @@ class App extends Component {
             allRides={allRides}
             isOpen={this.state.isOpen}
             markerClicked={this.markerClicked}
+            clearQuery={this.clearQuery}
+            isMainOpen={this.state.isMainOpen}
+            toggleMainOpen={this.toggleMainOpen}
         />
       </div>
     );
