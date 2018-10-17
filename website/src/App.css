@@ -234,6 +234,18 @@ hr {
   border: solid 1px rgb(194, 159, 130);
 }
 
+/* *** Map InfoWindow *** */
+.rons-thoughts {
+  font-family: 'Shadows Into Light Two', cursive;
+}
+.rons-thoughts h4 {
+  color: rgb(194, 159, 130);
+  margin-bottom: 5px;
+}
+.rons-thoughts p {
+  margin-top: 5px;
+}
+
 /* *** Custom Scrollbar *** */
 /* width */
 ::-webkit-scrollbar {
