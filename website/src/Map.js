@@ -12,6 +12,7 @@ import RideMarker from './images/rides-marker.png'
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
+      ref={props.zoomToMarkers}
       defaultZoom={ 16 }
       defaultCenter={props.center}
       defaultOptions={{ styles: mapStyles, mapTypeControl: false }}
@@ -104,7 +105,7 @@ class Map extends Component {
 
 
   render() {
-    const { rides, allRides, markerClicked, isOpen, clearQuery, isMainOpen, toggleMainOpen } = this.props
+    const { rides, allRides, markerClicked, isOpen, clearQuery, isMainOpen, toggleMainOpen, zoomToMarkers } = this.props
     const { quote } = this.state
 
     return (
@@ -123,6 +124,7 @@ class Map extends Component {
           isMainOpen={isMainOpen}
           toggleMainOpen={toggleMainOpen}
           quote={quote}
+          zoomToMarkers={zoomToMarkers}
       />
     )
   }

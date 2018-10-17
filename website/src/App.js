@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Marker } from 'react-google-maps'
 import MapContainer from './MapContainer'
 import Navigation from './Navigation'
 import Sidebar from './Sidebar'
@@ -17,6 +18,7 @@ class App extends Component {
       isToggleOn: true,
       isMainOpen: false,
       multiple: false,
+      zoomToMarkers: null,
       rides: [
               { title: "Peter Pan's Flight", location: {lat: 33.813126, lng: -117.91888}, park: 'Disneyland', land: 'Fantasyland', height: [''], type: ['Small Drops', 'Slow', 'Dark', 'Loud', 'Indoor'], fastpass: false, id: 'ChIJ0310NdHX3IARyeJ2xX2LRyY' },
               { title: "Disneyland Railroad", location: {lat: 33.810033, lng: -117.918959}, park:'Disneyland', land:'Main Street, U.S.A.', height: [''], type: ['Slow', 'Dark', 'Loud'], fastpass: false, id: 'ChIJIbC_stDX3IARJxR4dC7qN3k'},
@@ -99,6 +101,26 @@ class App extends Component {
     this.setState({ isOpen: false })
   }
 
+  componentDidMount() {
+    this.setState({
+      zoomToMarkers: map => {
+        const bounds = new window.google.maps.LatLngBounds();
+        map.props.children.forEach((child) => {
+          if (child.type === Marker) {
+            bounds.extend(new window.google.maps.LatLng(child.props.position.lat, child.props.position.lng));
+          }
+        })
+        if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
+          var offset = 0.003;
+          var center = bounds.getCenter();
+          bounds.extend(new window.google.maps.LatLng(center.lat() + offset, center.lng() + offset));
+          bounds.extend(new window.google.maps.LatLng(center.lat() - offset, center.lng() - offset));
+        }
+        map.fitBounds(bounds);
+      }
+    })
+  }
+
     /* ** Code for dropdown filter - work in progress **
       ** TODO: get dropdown to filter rides list and markers **
     */
@@ -116,7 +138,7 @@ class App extends Component {
     // }
 
   render() {
-    const { rides, query } = this.state
+    const { rides, query, zoomToMarkers } = this.state
     let hamburgerClass = this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'
     let sidebarToggle = this.state.isToggleOn ? false : true
 
@@ -195,6 +217,7 @@ class App extends Component {
             clearQuery={this.clearQuery}
             isMainOpen={this.state.isMainOpen}
             toggleMainOpen={this.toggleMainOpen}
+            zoomToMarkers={zoomToMarkers}
         />
       </div>
     );
