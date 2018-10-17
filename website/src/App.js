@@ -19,6 +19,7 @@ class App extends Component {
       multiple: false,
       rides: [
               { title: "Peter Pan's Flight", location: {lat: 33.813126, lng: -117.91888}, park: 'Disneyland', land: 'Fantasyland', height: [''], type: ['Small Drops', 'Slow', 'Dark', 'Loud', 'Indoor'], fastpass: false, id: 'ChIJ0310NdHX3IARyeJ2xX2LRyY' },
+              { title: "Disneyland Railroad", location: {lat: 33.810033, lng: -117.918959}, park:'Disneyland', land:'Main Street, U.S.A.', height: [''], type: ['Slow', 'Dark', 'Loud'], fastpass: false, id: 'ChIJIbC_stDX3IARJxR4dC7qN3k'},
               { title: 'Buzz Lightyear Astro-Blasters', location: {lat: 33.812196, lng: -117.91799}, park: 'Disneyland', land: 'Tomorrowland', height: [''], type: ['Slow', 'Spinning', 'Dark', 'Loud', 'Indoor', 'Interactive'], fastpass: true, id: 'ChIJ0ytGJ9HX3IAR1FJWOr-ShV0' },
               { title: 'Star Tours', location: {lat: 33.811883, lng: -117.917963}, park: 'Disneyland', land: 'Tomorrowland', height: ['40', '102'], type: ['Small Drops', 'Thrill', 'Dark', 'Loud', 'Indoor'], fastpass: true, id: 'ChIJeUNI2dDX3IARa_6z4I7tImM' },
               { title: 'Autopia', location: {lat: 33.812567, lng: -117.916366}, park: 'Disneyland', land: 'Tomorrowland', height: ['32', '81'], type: ['Slow', 'Loud', 'Interactive'], fastpass: false, id: 'ChIJre8xANHX3IAR4lFwA-rZLj4' },
