@@ -39,6 +39,11 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
               <div style={{ fontFamily: `waltograph`, fontSize: `2.2em`, color: `#82C2BF`  }}>
                 Happiest Place on Earth!
               </div>
+
+              <div className="rons-thoughts">
+                <h4>Ron Swanson Thought of the Moment</h4>
+                <p id="quote">{props.quote}</p>
+              </div>
             </div>
           </InfoWindow>
         }
@@ -83,16 +88,24 @@ class Map extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      data: null
+      quote: null
     }
   }
 
+  componentDidMount() {
+    fetch('http://ron-swanson-quotes.herokuapp.com/v2/quotes')
+    .then( results => {return results.json()} )
+    .then( quote => this.setState({ quote }) )
+    .catch(err => {
+      console.log('there has been an error loading the quote')
+      console.log(err)
+    })
   }
 
 
   render() {
     const { rides, allRides, markerClicked, isOpen, clearQuery, isMainOpen, toggleMainOpen } = this.props
-    let quote
+    const { quote } = this.state
 
     return (
       <MyMapComponent
@@ -109,6 +122,7 @@ class Map extends Component {
           clearQuery={clearQuery}
           isMainOpen={isMainOpen}
           toggleMainOpen={toggleMainOpen}
+          quote={quote}
       />
     )
   }
