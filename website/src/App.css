@@ -176,18 +176,24 @@ hr {
 }
 .location-details {
   display: block;
+  font-size: 1em;
   text-align: left;
+  color: rgb(0, 0, 0);
   width: 90%;
   height: 50%;
   margin-left: auto;
   margin-right: auto;
   font-family: 'Shadows Into Light Two';
 }
+.location-details strong {
+  font-size: 1em;
+  text-align: center;
+  color: rgb(194, 159, 130);
+}
 .location-ul {
   list-style: none;
   padding-left: 0;
   display: inline;
-  font-size: 0.8em;
 }
 .location-ul li {
   display: inline;
