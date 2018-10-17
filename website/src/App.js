@@ -80,6 +80,7 @@ class App extends Component {
     this.setState({ query: ride.title })
     this.setState({ isHidden: !this.state.isHidden })
     this.setState({ isOpen: !this.state.isOpen })
+    this.setState({ isMainOpen: false })
   }
 
   /* *** Selects location info div on user click, hides all other location info dix, shows InfoWindow *** */
@@ -87,6 +88,7 @@ class App extends Component {
     this.setState({ query: ride.title })
     this.setState({ isHidden: !this.state.isHidden })
     this.setState({ isOpen: !this.state.isOpen })
+    this.setState({ isMainOpen: false })
   }
 
   /* *** Selects Main marker *** */
