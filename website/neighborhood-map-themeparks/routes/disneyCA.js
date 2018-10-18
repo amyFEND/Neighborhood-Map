@@ -7,18 +7,22 @@ var ThemeParks = require('themeparks');
 // access a specific park
 var disneyCA = new ThemeParks.Parks.DisneylandResortCaliforniaAdventure();
 
+let rideArray = []
+
 // access wait times by Promise
-disneyCA.GetWaitTimes().then(function(ridesCA) {
-  let rideWaitTimesCA
+disneyCA.GetWaitTimes().then(function(rides) {
     // print each wait time
-    for(ride of ridesCA) {
-        let rideCA = console.log(ride.name + ": " + ride.waitTime + " minutes wait");
+    for(ride of rides) {
+      if (ride.active === true) {
+        ride
+      }
+      rideArray.push(ride)
     }
 }, console.error);
 
 /* GET California Adventure Rides. */
 router.get('/', function(req, res, next) {
-  res.send('respond with DCA resource');
+  res.json(rideArray);
 });
 
 module.exports = router;

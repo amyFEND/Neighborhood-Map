@@ -7,18 +7,22 @@ var ThemeParks = require('themeparks');
 // access a specific park
 var disneyland = new ThemeParks.Parks.DisneylandResortMagicKingdom();
 
+let rideArray = []
+
 // access wait times by Promise
 disneyland.GetWaitTimes().then(function(rides) {
-  let rideWaitTimes
     // print each wait time
     for(ride of rides) {
-        console.log(ride.name + ": " + ride.waitTime + " minutes wait");
+      if (ride.active === true) {
+        ride
+      }
+      rideArray.push(ride)
     }
 }, console.error);
 
 /* GET Disneyland Rides. */
 router.get('/', function(req, res, next) {
-  res.send('respond with Disneyland resource');
+  res.json(rideArray);
 });
 
 module.exports = router;
