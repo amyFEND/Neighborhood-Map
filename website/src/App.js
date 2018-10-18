@@ -19,28 +19,30 @@ class App extends Component {
       isMainOpen: false,
       multiple: false,
       zoomToMarkers: null,
+      disneylandRides: [],
+      disneyCaRides: [],
       rides: [
-              { title: "Peter Pan's Flight", location: {lat: 33.813126, lng: -117.91888}, park: 'Disneyland', land: 'Fantasyland', height: [''], type: ['Small Drops', 'Slow', 'Dark', 'Loud', 'Indoor'], fastpass: false, id: 'ChIJ0310NdHX3IARyeJ2xX2LRyY' },
-              { title: "Disneyland Railroad", location: {lat: 33.810033, lng: -117.918959}, park:'Disneyland', land:'Main Street, U.S.A.', height: [''], type: ['Slow', 'Dark', 'Loud'], fastpass: false, id: 'ChIJIbC_stDX3IARJxR4dC7qN3k'},
-              { title: 'Buzz Lightyear Astro-Blasters', location: {lat: 33.812196, lng: -117.91799}, park: 'Disneyland', land: 'Tomorrowland', height: [''], type: ['Slow', 'Spinning', 'Dark', 'Loud', 'Indoor', 'Interactive'], fastpass: true, id: 'ChIJ0ytGJ9HX3IAR1FJWOr-ShV0' },
-              { title: 'Star Tours', location: {lat: 33.811883, lng: -117.917963}, park: 'Disneyland', land: 'Tomorrowland', height: ['40', '102'], type: ['Small Drops', 'Thrill', 'Dark', 'Loud', 'Indoor'], fastpass: true, id: 'ChIJeUNI2dDX3IARa_6z4I7tImM' },
-              { title: 'Autopia', location: {lat: 33.812567, lng: -117.916366}, park: 'Disneyland', land: 'Tomorrowland', height: ['32', '81'], type: ['Slow', 'Loud', 'Interactive'], fastpass: false, id: 'ChIJre8xANHX3IAR4lFwA-rZLj4' },
-              { title: 'Space Mountain', location: {lat: 33.81138, lng: -117.917307}, park: 'Disneyland', land: 'Tomorrowland', height: ['40', '102'], type: ['Small Drops', 'Thrill', 'Dark', 'Loud', 'Scary', 'Indoor'], fastpass: true, id: 'ChIJT8tp6dDX3IARDaf9VUMefl0' },
-              { title: 'Haunted Mansion', location: {lat: 33.811723, lng: -117.922184}, park: 'Disneyland', land: 'New Orleans Square', height: [''], type: ['Slow', 'Dark', 'Loud', 'Scary', 'Indoor'], fastpass: true, id: 'ChIJ5XV8V9bX3IARbDoMuumPNq0' },
-              { title: 'Pirates of the Caribbean', location: {lat: 33.811254, lng: -117.920785}, park: 'Disneyland', land: 'New Orleans Square', height: [''], type: ['Small Drops', 'Slow', 'Water', 'Dark', 'Loud', 'Scary', 'Indoor'], fastpass: false, id: 'ChIJez76HtfX3IARglmSgm8wOvY' },
-              { title: 'The Many Adventures of Winnie the Pooh', location: {lat: 33.812525, lng: -117.923135}, park: 'Disneyland', land: 'Critter Country', height: [''], type: ['Slow', 'Dark', 'Loud', 'Indoor'], fastpass: false, id: 'ChIJIcgMaNbX3IARMEZTBjZIDR8' },
-              { title: 'Matterhorn Bobsleds', location: {lat: 33.81307, lng: -117.91782}, park: 'Disneyland', land: 'Fantasyland', height: ['42', '107'], type: ['Small Drops', 'Thrill', 'Water', 'Dark', 'Loud', 'Scary'], fastpass: true, id: 'ChIJ1fghPNHX3IARNCJ07weBm68' },
-              { title: 'Big Thunder Moutnain Railroad', location: {lat: 33.812521, lng: -117.920444}, park: 'Disneyland', land: 'Frontierland', height: ['40', '102'], type: ['Small Drops', 'Thrill', 'Dark', 'Loud'], fastpass: true, id: 'ChIJkYhIwNbX3IARFRPbmix5YI8' },
-              { title: 'Jungle Cruise', location: {lat: 33.811437, lng: -117.919952}, park: 'Disneyland', land: 'Adventureland', height: [''], type: ['Slow', 'Water', 'Loud'], fastpass: false, id: 'ChIJI2dYJtfX3IARmkrrVy2MgEI' },
-              { title: 'Indiana Jones Adventure', location: {lat: 33.811349, lng: -117.920424}, park: 'Disneyland', land: 'Adventureland', height: ['46', '117'], type: ['Small Drops', 'Thrill', 'Dark', 'Loud', 'Scary', 'Indoor'], fastpass: true, id: 'ChIJYfe3GNfX3IAR_H81DtmkMPo' },
-              { title: "Soarin' Around the World", location: {lat: 33.808396, lng: -117.919971}, park: 'Disney California Adventure', land: 'Grizzly Peak', height: ['40', '102'], type: ['Small Drops', 'Slow', 'Dark', 'Loud', 'Indoor'], fastpass: true, id: 'ChIJpVPw7tnX3IARcT0OcqyxKro' },
-              { title: 'Grizzly River Run', location: {lat: 33.807548, lng: -117.920845}, park: 'Disney California Adventure', land: 'Grizzly Peak', height: ['42', '107'], type: ['Small Drops', 'Thrill', 'Water', 'Spinning'], fastpass: true, id: 'ChIJx7RWv9nX3IARJ5l8-jFv0tc' },
-              { title: "Ariel's Undersea Adventure", location: {lat: 33.806349, lng: -117.921259}, park: 'Disney California Adventure', land: 'Paradise Gardens Park', height: [''], type: ['Slow', 'Dark', 'Loud', 'Indoor'], fastpass: false, id: 'ChIJF_SqqdnX3IARbrfcackf3ok' },
-              { title: "Goofy's Sky School", location: {lat: 33.806258, lng: -117.92277}, park: 'Disney California Adventure', land: 'Paradise Gardens Park', height: ['42', '107'], type: ['Small Drops', 'Thrill', 'Loud'], fastpass: true, id: 'ChIJ-dlUQ9jX3IARSuuok0tq48g' },
-              { title: 'Toy Story Midway Mania', location: {lat: 33.80459, lng: -117.921658}, park: 'Disney California Adventure', land: 'Pixar Pier', height: [''], type: ['Dark', 'Loud', 'Indoor', 'Interactive'], fastpass: true, id: 'ChIJO1Un79jX3IARePzk5hQD0kg' },
-              { title: 'Incredicoaster', location: {lat: 33.804619, lng: -117.920656}, park: 'Disney California Adventure', land: 'Pixar Pier', height: ['48', '122'], type: ['Big Drops', 'Thrill', 'Loud', 'New'], fastpass: true, id: 'ChIJ_SkO-snX3IARQgRfdNnQVEI' },
-              { title: "Mater's Junkyard Jamboree", location: {lat: 33.806489, lng: -117.919153}, park: 'Disney California Adventure', land: 'Cars Land', height: ['32', '81'], type: ['Spinning'], fastpass: false, id: 'ChIJmW1GftnX3IARWvHgfpJ7Lek' },
-              { title: 'Radiator Springs Racers', location: {lat: 33.805188, lng: -117.918657}, park: 'Disney California Adventure', land: 'Cars Land', height: ['40', '102'], type: ['Small Drops', 'Thrill', 'Dark', 'Loud'], fastpass: true, id: 'ChIJDZni3dvX3IAR-UgkGaAmzJA' }
+              { title: "Peter Pan's Flight",                         location: {lat: 33.813126, lng: -117.91888},     park: 'Disneyland',                     land: 'Fantasyland',                height: [],             type: ['Small Drops', 'Slow', 'Dark', 'Loud', 'Indoor'],                        fastpass: false,      id: 'ChIJ0310NdHX3IARyeJ2xX2LRyY' },
+              { title: "Disneyland Railroad",                        location: {lat: 33.810033, lng: -117.918959},    park: 'Disneyland',                     land: 'Main Street, U.S.A.',        height: [],             type: ['Slow', 'Dark', 'Loud'],                                                 fastpass: false,      id: 'ChIJIbC_stDX3IARJxR4dC7qN3k' },
+              { title: 'Buzz Lightyear Astro-Blasters',              location: {lat: 33.812196, lng: -117.91799},     park: 'Disneyland',                     land: 'Tomorrowland',               height: [],             type: ['Slow', 'Spinning', 'Dark', 'Loud', 'Indoor', 'Interactive'],            fastpass: true,       id: 'ChIJ0ytGJ9HX3IAR1FJWOr-ShV0' },
+              { title: 'Star Tours',                                 location: {lat: 33.811883, lng: -117.917963},    park: 'Disneyland',                     land: 'Tomorrowland',               height: [40, 102],      type: ['Small Drops', 'Thrill', 'Dark', 'Loud', 'Indoor'],                      fastpass: true,       id: 'ChIJeUNI2dDX3IARa_6z4I7tImM' },
+              { title: 'Autopia',                                    location: {lat: 33.812567, lng: -117.916366},    park: 'Disneyland',                     land: 'Tomorrowland',               height: [32, 81],       type: ['Slow', 'Loud', 'Interactive'],                                          fastpass: false,      id: 'ChIJre8xANHX3IAR4lFwA-rZLj4' },
+              { title: 'Space Mountain',                             location: {lat: 33.81138, lng: -117.917307},     park: 'Disneyland',                     land: 'Tomorrowland',               height: [40, 102],      type: ['Small Drops', 'Thrill', 'Dark', 'Loud', 'Scary', 'Indoor'],             fastpass: true,       id: 'ChIJT8tp6dDX3IARDaf9VUMefl0' },
+              { title: 'Haunted Mansion',                            location: {lat: 33.811723, lng: -117.922184},    park: 'Disneyland',                     land: 'New Orleans Square',         height: [],             type: ['Slow', 'Dark', 'Loud', 'Scary', 'Indoor'],                              fastpass: true,       id: 'ChIJ5XV8V9bX3IARbDoMuumPNq0' },
+              { title: 'Pirates of the Caribbean',                   location: {lat: 33.811254, lng: -117.920785},    park: 'Disneyland',                     land: 'New Orleans Square',         height: [],             type: ['Small Drops', 'Slow', 'Water', 'Dark', 'Loud', 'Scary', 'Indoor'],      fastpass: false,      id: 'ChIJez76HtfX3IARglmSgm8wOvY' },
+              { title: 'The Many Adventures of Winnie the Pooh',     location: {lat: 33.812525, lng: -117.923135},    park: 'Disneyland',                     land: 'Critter Country',            height: [],             type: ['Slow', 'Dark', 'Loud', 'Indoor'],                                       fastpass: false,      id: 'ChIJIcgMaNbX3IARMEZTBjZIDR8' },
+              { title: 'Matterhorn Bobsleds',                        location: {lat: 33.81307, lng: -117.91782},      park: 'Disneyland',                     land: 'Fantasyland',                height: [42, 107],      type: ['Small Drops', 'Thrill', 'Water', 'Dark', 'Loud', 'Scary'],              fastpass: true,       id: 'ChIJ1fghPNHX3IARNCJ07weBm68' },
+              { title: 'Big Thunder Moutnain Railroad',              location: {lat: 33.812521, lng: -117.920444},    park: 'Disneyland',                     land: 'Frontierland',               height: [40, 102],      type: ['Small Drops', 'Thrill', 'Dark', 'Loud'],                                fastpass: true,       id: 'ChIJkYhIwNbX3IARFRPbmix5YI8' },
+              { title: 'Jungle Cruise',                              location: {lat: 33.811437, lng: -117.919952},    park: 'Disneyland',                     land: 'Adventureland',              height: [],             type: ['Slow', 'Water', 'Loud'],                                                fastpass: false,      id: 'ChIJI2dYJtfX3IARmkrrVy2MgEI' },
+              { title: 'Indiana Jones Adventure',                    location: {lat: 33.811349, lng: -117.920424},    park: 'Disneyland',                     land: 'Adventureland',              height: [46, 117],      type: ['Small Drops', 'Thrill', 'Dark', 'Loud', 'Scary', 'Indoor'],             fastpass: true,       id: 'ChIJYfe3GNfX3IAR_H81DtmkMPo' },
+              { title: "Soarin' Around the World",                   location: {lat: 33.808396, lng: -117.919971},    park: 'Disney California Adventure',    land: 'Grizzly Peak',               height: [40, 102],      type: ['Small Drops', 'Slow', 'Dark', 'Loud', 'Indoor'],                        fastpass: true,       id: 'ChIJpVPw7tnX3IARcT0OcqyxKro' },
+              { title: 'Grizzly River Run',                          location: {lat: 33.807548, lng: -117.920845},    park: 'Disney California Adventure',    land: 'Grizzly Peak',               height: [42, 107],      type: ['Small Drops', 'Thrill', 'Water', 'Spinning'],                           fastpass: true,       id: 'ChIJx7RWv9nX3IARJ5l8-jFv0tc' },
+              { title: "Ariel's Undersea Adventure",                 location: {lat: 33.806349, lng: -117.921259},    park: 'Disney California Adventure',    land: 'Paradise Gardens Park',      height: [],             type: ['Slow', 'Dark', 'Loud', 'Indoor'],                                       fastpass: false,      id: 'ChIJF_SqqdnX3IARbrfcackf3ok' },
+              { title: "Goofy's Sky School",                         location: {lat: 33.806258, lng: -117.92277},     park: 'Disney California Adventure',    land: 'Paradise Gardens Park',      height: [42, 107],      type: ['Small Drops', 'Thrill', 'Loud'],                                        fastpass: true,       id: 'ChIJ-dlUQ9jX3IARSuuok0tq48g' },
+              { title: 'Toy Story Midway Mania',                     location: {lat: 33.80459, lng: -117.921658},     park: 'Disney California Adventure',    land: 'Pixar Pier',                 height: [],             type: ['Dark', 'Loud', 'Indoor', 'Interactive'],                                fastpass: true,       id: 'ChIJO1Un79jX3IARePzk5hQD0kg' },
+              { title: 'Incredicoaster',                             location: {lat: 33.804619, lng: -117.920656},    park: 'Disney California Adventure',    land: 'Pixar Pier',                 height: [48, 122],      type: ['Big Drops', 'Thrill', 'Loud', 'New'],                                   fastpass: true,       id: 'ChIJ_SkO-snX3IARQgRfdNnQVEI' },
+              { title: "Mater's Junkyard Jamboree",                  location: {lat: 33.806489, lng: -117.919153},    park: 'Disney California Adventure',    land: 'Cars Land',                  height: [32, 81],       type: ['Spinning'],                                                             fastpass: false,      id: 'ChIJmW1GftnX3IARWvHgfpJ7Lek' },
+              { title: 'Radiator Springs Racers',                    location: {lat: 33.805188, lng: -117.918657},    park: 'Disney California Adventure',    land: 'Cars Land',                  height: [40, 102],      type: ['Small Drops', 'Thrill', 'Dark', 'Loud'],                                fastpass: true,       id: 'ChIJDZni3dvX3IAR-UgkGaAmzJA' }
             ]
     }
     this.handleClick = this.handleClick.bind(this)
@@ -49,11 +51,20 @@ class App extends Component {
     this.markerClicked = this.markerClicked.bind(this)
     this.infoClicked = this.infoClicked.bind(this)
     this.toggleMainOpen = this.toggleMainOpen.bind(this)
+    this.zoomMap = this.zoomMap.bind(this)
+    this.getDisneylandRides = this.getDisneylandRides.bind(this)
+    this.getdisneyCaRides = this.getdisneyCaRides.bind(this)
     /* ** Code for dropdown filter - work in progress **
       ** TODO: get dropdown to filter rides list and markers **
     */
     // this.checked = this.checked.bind(this)
     // this.filterItems = this.filterItems.bind(this)
+  }
+
+  componentDidMount() {
+    this.zoomMap()
+    this.getDisneylandRides()
+    this.getdisneyCaRides()
   }
 
   /* *** Toggles Sidebar *** */
@@ -101,7 +112,7 @@ class App extends Component {
     this.setState({ isOpen: false })
   }
 
-  componentDidMount() {
+  zoomMap = () => {
     this.setState({
       zoomToMarkers: map => {
         const bounds = new window.google.maps.LatLngBounds();
@@ -118,7 +129,27 @@ class App extends Component {
         }
         map.fitBounds(bounds);
       }
-    })
+    });
+  }
+
+  getDisneylandRides = () => {
+    fetch('http://localhost:3001/disneyland')
+      .then( res => res.json() )
+      .then(disneylandRides => this.setState({ disneylandRides }))
+      .catch(err => {
+        console.log('there has been an error loading the rides')
+        console.log(err)
+      });
+  }
+
+  getdisneyCaRides = () => {
+    fetch('http://localhost:3001/disneyCA')
+      .then( res => res.json() )
+      .then(disneyCaRides => this.setState({ disneyCaRides }))
+      .catch(err => {
+        console.log('there has been an error loading the rides')
+        console.log(err)
+      });
   }
 
     /* ** Code for dropdown filter - work in progress **
@@ -190,6 +221,15 @@ class App extends Component {
         <button className={hamburgerClass} onClick={this.handleClick}>&#x2630;</button>
 
         <Navigation />
+
+        <ul>
+          {this.state.disneyCaRides.map(disneyCaRide =>
+            (<li key={disneyCaRide.id}>{disneyCaRide.name} - current wait time: {disneyCaRide.waitTime} minutes</li>))}
+        </ul>
+        <ul>
+          {this.state.disneylandRides.map(disneylandRide =>
+            (<li key={disneylandRide.id}>{disneylandRide.name} - current wait time: {disneylandRide.waitTime} minutes</li>))}
+        </ul>
 
         <Sidebar
             rides={rides}
