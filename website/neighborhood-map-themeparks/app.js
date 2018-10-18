@@ -3,9 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors');
+const fileUpload = require('express-fileupload');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var disneylandRouter = require('./routes/disneyland');
 var disneyCARouter = require('./routes/disneyCA');
 
@@ -19,10 +20,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// Use CORS and File Upload modules here
+app.use(cors());
+app.use(fileUpload());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/disneyland', disneylandRouter);
 app.use('/disneyCA', disneyCARouter);
 
