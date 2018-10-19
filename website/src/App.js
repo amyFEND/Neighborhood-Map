@@ -199,7 +199,7 @@ class App extends Component {
     this.infoClicked = this.infoClicked.bind(this)
     this.toggleMainOpen = this.toggleMainOpen.bind(this)
     this.zoomMap = this.zoomMap.bind(this)
-    this.getDisneylandRides = this.getDisneylandRides.bind(this)
+    this.getdisneylandRides = this.getdisneylandRides.bind(this)
     this.getdisneyCaRides = this.getdisneyCaRides.bind(this)
     /* ** Code for dropdown filter - work in progress **
       ** TODO: get dropdown to filter rides list and markers **
@@ -210,7 +210,7 @@ class App extends Component {
 
   componentDidMount() {
     this.zoomMap()
-    this.getDisneylandRides()
+    this.getdisneylandRides()
     this.getdisneyCaRides()
   }
 
@@ -279,7 +279,7 @@ class App extends Component {
     });
   }
 
-  getDisneylandRides = () => {
+  getdisneylandRides = () => {
     fetch('http://localhost:3001/disneyland')
       .then( res => res.json() )
       .then(disneylandRides => this.setState({ disneylandRides }))
