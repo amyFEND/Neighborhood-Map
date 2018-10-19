@@ -19,8 +19,7 @@ class App extends Component {
       isMainOpen: false,
       multiple: false,
       zoomToMarkers: null,
-      disneylandRides: [],
-      disneyCaRides: [],
+      apiRides: [],
       rides: [
               { title: "Peter Pan's Flight",
                 location: {lat: 33.813126, lng: -117.91888},
@@ -282,7 +281,7 @@ class App extends Component {
   getdisneylandRides = () => {
     fetch('http://localhost:3001/disneyland')
       .then( res => res.json() )
-      .then(disneylandRides => this.setState({ disneylandRides }))
+      .then(disneylandRides => this.setState({ apiRides: [...this.state.apiRides, ...disneylandRides] }))
       .catch(err => {
         console.log('there has been an error loading the rides')
         console.log(err)
@@ -292,7 +291,7 @@ class App extends Component {
   getdisneyCaRides = () => {
     fetch('http://localhost:3001/disneyCA')
       .then( res => res.json() )
-      .then(disneyCaRides => this.setState({ disneyCaRides }))
+      .then(disneyCaRides => this.setState({ apiRides: [...this.state.apiRides, ...disneyCaRides] }))
       .catch(err => {
         console.log('there has been an error loading the rides')
         console.log(err)
