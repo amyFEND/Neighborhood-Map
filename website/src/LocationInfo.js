@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class LocationInfo extends Component {
   render() {
     const { ride, infoClicked, isHidden } = this.props
-    const rideHeight = ride.height.length === 1 ? 'Any height' : `${ride.height[0]}in (${ride.height[1]}cm) or taller`
+    const rideHeight = ride.height.length === 0 ? 'Any height' : `${ride.height[0]}in (${ride.height[1]}cm) or taller`
     const fastpass = ride.fastpass === true ? 'Yes' : 'No'
     const rideTypes = ride.type.map((type, i) => (<li key={i}>{type}</li>))
 
