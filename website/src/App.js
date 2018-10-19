@@ -294,7 +294,7 @@ class App extends Component {
     // }
 
   render() {
-    const { rides, query, zoomToMarkers } = this.state
+    const { rides, query, zoomToMarkers, apiRides } = this.state
     let hamburgerClass = this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'
     let sidebarToggle = this.state.isToggleOn ? false : true
 
@@ -321,6 +321,18 @@ class App extends Component {
     let set = new Set(concat)
     let allRides = [...set]
     allRides.sort(sortBy('title'))
+
+    /* *** Adds waitTime to rides array *** */
+    for (let ride of rides) {
+      for (let apiRide of apiRides) {
+        if (ride.id === apiRide.id) {
+          Object.assign(ride, {
+            waitTime: apiRide.waitTime,
+            fastpass: apiRide.fastPass
+          })
+        }
+      }
+    }
 
     /* ** Code for dropdown filter - work in progress **
       ** TODO: get dropdown to filter rides list and markers **
