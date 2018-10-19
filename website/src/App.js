@@ -359,14 +359,6 @@ class App extends Component {
 
         <Navigation />
 
-        <ul>
-          {this.state.disneyCaRides.map(disneyCaRide =>
-            (<li key={disneyCaRide.id}>{disneyCaRide.name} - current wait time: {disneyCaRide.waitTime} minutes</li>))}
-        </ul>
-        <ul>
-          {this.state.disneylandRides.map(disneylandRide =>
-            (<li key={disneylandRide.id}>{disneylandRide.name} - current wait time: {disneylandRide.waitTime} minutes</li>))}
-        </ul>
 
         <Sidebar
             rides={rides}
