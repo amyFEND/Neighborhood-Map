@@ -1,8 +1,10 @@
 {
   "name": "website",
   "version": "0.1.0",
+  "main": "app.js",
   "engines": {
-    "node": "10.8.0"
+    "node": "10.8.0",
+    "npm": "6.4.1"
   },
   "private": true,
   "homepage": "https://amyfend.github.io/Neighborhood-Map/",
