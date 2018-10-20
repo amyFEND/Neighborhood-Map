@@ -75,6 +75,8 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                 <div style={{ fontFamily: `waltograph`, fontSize: `2em`, color: `#82C2BF`, opacity: 1 }}>
                   {ride.title}
                 </div>
+                <span style={{ fontFamily: `Shadows Into Light Two`, fontSize: `1em` }}><strong style={{ color: `#C29F82` }}>Current Wait Time:</strong> {ride.waitTime} minutes</span>
+                <br />
               </div>
             </InfoWindow>
           }
