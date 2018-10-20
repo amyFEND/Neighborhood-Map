@@ -127,9 +127,9 @@ class Map extends Component {
           isMarkerShown
           center = {{ lat: 33.8091, lng: -117.918972 }}
           googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA8HDeuxQegHPX6FU5jN-_LU75rDIXSfhM"
-          loadingElement={<div style={{ height: `100%`, fontSize:`3em`, lineHeight:`4em`, color: `rgb(130,194,191)` }}>Loading...</div>}
-          containerElement={<div style={{ height: `calc(100vh - 95px)` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
+          loadingElement={<div aria-label="Loading map…" style={{ height: `100%`, fontSize:`3em`, lineHeight:`4em`, color: `rgb(130,194,191)` }}>Loading...</div>}
+          containerElement={<div tabIndex={-1} style={{ height: `calc(100vh - 95px)` }} />}
+          mapElement={<div tabIndex={-1} style={{ height: `100%` }} />}
           rides={rides}
           allRides={allRides}
           isOpen={isOpen}
