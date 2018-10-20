@@ -36,7 +36,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                   alignBottom: true
               }}
           >
-            <div onClick={props.toggleMainOpen} style={{ minWidth:`275px`, opacity: 0.5, padding: `12px` }}>
+            <div onClick={props.toggleMainOpen} style={{ minWidth:`75px`, opacity: 0.5, padding: `12px` }}>
               <div style={{ fontFamily: `waltograph`, fontSize: `2.2em`, color: `#82C2BF`, marginBottom: `5px` }}>
                 Happiest Place on Earth!
               </div>
