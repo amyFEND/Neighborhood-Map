@@ -259,6 +259,7 @@ class App extends Component {
     this.setState({ isOpen: false })
   }
 
+  /* *** Set map to zoom on markers on page load *** */
   zoomMap = () => {
     this.setState({
       zoomToMarkers: map => {
@@ -279,6 +280,7 @@ class App extends Component {
     });
   }
 
+  /* *** Fetches Themeparks API data *** */
   getdisneylandRides = () => {
     fetch('http://localhost:3001/disneyland')
       .then( res => res.json() )
@@ -289,7 +291,6 @@ class App extends Component {
         console.log(err)
       });
   }
-
   getdisneyCaRides = () => {
     fetch('http://localhost:3001/disneyCA')
       .then( res => res.json() )
