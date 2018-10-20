@@ -359,7 +359,6 @@ class App extends Component {
 
         <Navigation />
 
-
         <Sidebar
             rides={rides}
             allRides={allRides}
