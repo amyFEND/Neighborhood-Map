@@ -19,7 +19,7 @@ class LocationInfo extends Component {
           <br />
           <span><strong>Land:</strong> {ride.land}</span>
           <br />
-          <span><strong>Height:</strong> {rideHeight}</span>
+          <span><strong>Minimum Height:</strong> {rideHeight}</span>
           <br />
           <span><strong>FASTPASS:</strong> {fastpass}</span>
           <br />
