@@ -26,17 +26,16 @@ Additionally, as a fan of the show Parks & Recreation, I added quotes I imagine 
 <img alt="Application Main Screen Screenshot" src="document-images/app-main-page.png" />
 - Filter through my favorite rides by the following:
   - Searches can be done by ride name (i.e. 'Autopia') or ride type (i.e. 'Dark', 'Loud', 'Slow')
-  <img alt="Search Example" src="document-images/app-search-example.png" width="400" />
+  <img alt="Search Example" src="document-images/app-search-example.png" width="300" />
   - Clicking on any ride name in the left side bar, or
   - Click on any marker on the map
     <br />
-    <img alt="Ride Selected Example" src="document-images/app-selection-example.png" width="400" />
-- To clear the selection, click on [Show All] button
-  <br />
-  <img alt="Show All button example" src="document-images/show-all-button-example.png" width="100" />
+    <img alt="Ride Selected Example" src="document-images/app-selection-example.png" width="600" />
+- To clear the selection, click on
+  <img alt="Show All button screenshot" src="document-images/show-all-button-example.png" width="100" />
 - Click on the main/center marker to see a funny quote from Ron Swanson
   <br />
-  <img alt="Center Marker InfoWindow shown, with quote from Ron Swanson" src="document-images/mobile-app-main-marker-infowindow.png" width="200" />
+  <img alt="Center Marker InfoWindow shown, with quote from Ron Swanson" src="document-images/mobile-app-main-marker-infowindow.png" width="300" />
 
 #### Skills Used
 - JavaScript
