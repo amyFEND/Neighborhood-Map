@@ -63,7 +63,7 @@ class Sidebar extends Component {
         {
           apiFail &&
           (
-            <div className="infoErr-container">
+            <div className="infoErr-container" aria-live="polite">
               <span className="infoErr">Ride times failed to load</span>
             </div>
           )
