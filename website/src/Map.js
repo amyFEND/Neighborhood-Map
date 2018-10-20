@@ -45,6 +45,8 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                 <span>{`Today's date:  ${props.today}`}</span>
               </div>
 
+              <hr />
+
               <div className="rons-thoughts">
                 <h4>Ron Swanson Thought of the Moment</h4>
                 <p id="quote">{props.quote}</p>
