@@ -37,8 +37,12 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
               }}
           >
             <div onClick={props.toggleMainOpen} style={{ minWidth:`75px`, opacity: 0.5, padding: `12px` }}>
-              <div style={{ fontFamily: `waltograph`, fontSize: `2.2em`, color: `#82C2BF`  }}>
+              <div style={{ fontFamily: `waltograph`, fontSize: `2.2em`, color: `#82C2BF`, marginBottom: `5px` }}>
                 Happiest Place on Earth!
+              </div>
+
+              <div style={{ fontFamily: `Shadows Into Light Two` }}>
+                <span>{`Today's date:  ${props.today}`}</span>
               </div>
 
               <div className="rons-thoughts">
@@ -110,6 +114,12 @@ class Map extends Component {
     const { rides, allRides, markerClicked, isOpen, clearQuery, isMainOpen, toggleMainOpen, zoomToMarkers } = this.props
     const { quote } = this.state
 
+    let currentDate = new Date()
+    let day = currentDate.getDate()
+    let month = currentDate.getMonth() + 1
+    let year = currentDate.getFullYear()
+    let today = year + `-` + month + `-` + day
+
     return (
       <MyMapComponent
           isMarkerShown
@@ -127,6 +137,7 @@ class Map extends Component {
           toggleMainOpen={toggleMainOpen}
           quote={quote}
           zoomToMarkers={zoomToMarkers}
+          today={today}
       />
     )
   }
