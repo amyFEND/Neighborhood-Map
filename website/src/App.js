@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Marker } from 'react-google-maps'
-import MapContainer from './MapContainer'
 import Navigation from './Navigation'
 import Sidebar from './Sidebar'
+import Map from './Map'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 import './App.css'
@@ -400,7 +400,7 @@ class App extends Component {
           // filteredItems={filteredItems}
         />
 
-        <MapContainer
+        <Map
             rides={rides}
             allRides={allRides}
             isOpen={this.state.isOpen}
