@@ -62,7 +62,7 @@ class App extends Component {
                 land: 'Tomorrowland',
                 height: [40, 102],
                 type: ['Small Drops', 'Thrill', 'Dark', 'Loud', 'Scary', 'Indoor'],
-                id: 'DisneylandResortMagicKingdom_18237368' },
+                id: 'DisneylandResortMagicKingdom_353435' },
               { title: 'Haunted Mansion',
                 location: {lat: 33.811723, lng: -117.922184},
                 park: 'Disneyland',
