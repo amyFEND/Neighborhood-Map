@@ -3,7 +3,7 @@ import Map from './Map'
 
 class MapContainer extends Component {
   render() {
-    const { rides, allRides, markerClicked, isOpen, clearQuery, isMainOpen, toggleMainOpen, zoomToMarkers } = this.props
+    const { rides, allRides, markerClicked, isOpen, clearQuery, isMainOpen, toggleMainOpen, zoomToMarkers, apiFail } = this.props
 
     return (
       <map className="map-container">
@@ -16,6 +16,7 @@ class MapContainer extends Component {
             isMainOpen={isMainOpen}
             toggleMainOpen={toggleMainOpen}
             zoomToMarkers={zoomToMarkers}
+            apiFail={apiFail}
         />
       </map>
     )

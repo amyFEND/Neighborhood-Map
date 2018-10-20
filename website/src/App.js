@@ -20,6 +20,7 @@ class App extends Component {
       multiple: false,
       zoomToMarkers: null,
       apiRides: [],
+      apiFail: false,
       rides: [
               { title: "Peter Pan's Flight",
                 location: {lat: 33.813126, lng: -117.91888},
@@ -262,7 +263,8 @@ class App extends Component {
       .then( res => res.json() )
       .then(disneylandRides => this.setState({ apiRides: [...this.state.apiRides, ...disneylandRides] }))
       .catch(err => {
-        console.log('there has been an error loading the rides')
+        this.setState({ apiFail: true })
+        console.log('there has been an error loading the rides API (getdisneylandRides)')
         console.log(err)
       });
   }
@@ -272,7 +274,8 @@ class App extends Component {
       .then( res => res.json() )
       .then(disneyCaRides => this.setState({ apiRides: [...this.state.apiRides, ...disneyCaRides] }))
       .catch(err => {
-        console.log('there has been an error loading the rides')
+        this.setState({ apiFail: true })
+        console.log('there has been an error loading the rides API (getdisneyCaRides)')
         console.log(err)
       });
   }
@@ -294,7 +297,7 @@ class App extends Component {
     // }
 
   render() {
-    const { rides, query, zoomToMarkers, apiRides } = this.state
+    const { rides, query, zoomToMarkers, apiRides, apiFail } = this.state
     let hamburgerClass = this.state.isToggleOn ? 'hamburger-open visible' : 'hamburger-close visible'
     let sidebarToggle = this.state.isToggleOn ? false : true
 
@@ -368,6 +371,7 @@ class App extends Component {
             clearQuery={this.clearQuery}
             infoClicked={this.infoClicked}
             isHidden={this.state.isHidden}
+            apiFail={apiFail}
             /* ** Code for dropdown filter - work in progress **
             ** TODO: get dropdown to filter rides list and markers **
           */
@@ -386,6 +390,7 @@ class App extends Component {
             isMainOpen={this.state.isMainOpen}
             toggleMainOpen={this.toggleMainOpen}
             zoomToMarkers={zoomToMarkers}
+            apiFail={apiFail}
         />
       </div>
     );

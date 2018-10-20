@@ -5,7 +5,7 @@ import './Responsive.css'
 
 class Sidebar extends Component {
   render() {
-    const { rides, allRides, isToggleOn, query, updateQuery, clearQuery, infoClicked, isHidden } = this.props
+    const { rides, allRides, isToggleOn, query, updateQuery, clearQuery, infoClicked, isHidden, apiFail } = this.props
     let sidebarClass = isToggleOn ? 'sidebar-show sidebar-show-big' : 'sidebar-hide sidebar-show-big'
 
     return (
@@ -60,9 +60,14 @@ class Sidebar extends Component {
           }
         </div>
 
-        <div className="infoBtn-container">
-          <button className="infoBtn">Help</button>
-        </div>
+        {
+          apiFail &&
+          (
+            <div className="infoErr-container">
+              <span className="infoErr">Ride times failed to load</span>
+            </div>
+          )
+        }
 
       </div>
     )

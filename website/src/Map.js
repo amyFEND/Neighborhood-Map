@@ -81,7 +81,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                 <div style={{ fontFamily: `waltograph`, fontSize: `2em`, color: `#82C2BF`, opacity: 1, marginBottom: `5px` }}>
                   {ride.title}
                 </div>
-                <span style={{ fontFamily: `Shadows Into Light Two`, fontSize: `1em` }}><strong style={{ color: `#C29F82` }}>Current Wait Time:</strong> {ride.waitTime} minutes</span>
+                <span style={{ fontFamily: `Shadows Into Light Two`, fontSize: `1em` }}><strong style={{ color: `#C29F82` }}>Current Wait Time:</strong> { props.apiFail ? 'no ride times available' : `${ride.waitTime} minutes` }</span>
                 <br />
               </div>
             </InfoWindow>
@@ -113,7 +113,7 @@ class Map extends Component {
 
 
   render() {
-    const { rides, allRides, markerClicked, isOpen, clearQuery, isMainOpen, toggleMainOpen, zoomToMarkers } = this.props
+    const { rides, allRides, markerClicked, isOpen, clearQuery, isMainOpen, toggleMainOpen, zoomToMarkers, apiFail } = this.props
     const { quote } = this.state
 
     let currentDate = new Date()
@@ -139,6 +139,7 @@ class Map extends Component {
           toggleMainOpen={toggleMainOpen}
           quote={quote}
           zoomToMarkers={zoomToMarkers}
+          apiFail={apiFail}
           today={today}
       />
     )
