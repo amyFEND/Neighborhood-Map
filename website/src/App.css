@@ -165,8 +165,8 @@ hr {
 }
 .location-info-header {
   height: 55px;
-  font-size: 1.5em;
-  letter-spacing: 2px;
+  font-size: 1.7em;
+  letter-spacing: 1px;
   vertical-align: middle;
   color: rgb(130, 194, 191);
   display: flex;
