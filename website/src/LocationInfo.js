@@ -8,7 +8,11 @@ class LocationInfo extends Component {
     const rideTypes = ride.type.map((type, i) => (<li key={i}>{type}</li>))
 
     return(
-      <div tabIndex="0" aria-labelledby="Ride Title" className="location-info" onClick={infoClicked.bind(this,ride)}>
+      <button
+          tabIndex="0"
+          aria-labelledby="Ride Title"
+          className="location-info"
+          onClick={infoClicked.bind(this,ride)}>
         <title id="location-info-header" className="location-info-header">
           <span>{ride.title}</span>
         </title>
@@ -26,7 +30,7 @@ class LocationInfo extends Component {
           <span><strong>Type:</strong> <ul className="location-ul">{rideTypes}</ul></span>
         </section>
       }
-      </div>
+      </button>
     )
   }
 }
