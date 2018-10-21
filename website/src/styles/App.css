@@ -161,6 +161,7 @@ hr {
 }
 .location-info-header {
   height: 55px;
+  font-family: 'waltograph', cursive;
   font-size: 1.7em;
   letter-spacing: 1px;
   vertical-align: middle;
