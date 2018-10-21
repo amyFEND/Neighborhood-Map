@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
-import mapStyles from './mapStyles.json'
+import mapStyles from './styles/mapStyles.json'
 import MainMarker from './images/main-marker.png'
 import RideMarker from './images/rides-marker.png'
 // import HoverMarker from './images/hover-marker.png'

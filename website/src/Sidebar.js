@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import LocationInfo from './LocationInfo'
-import './App.css'
-import './Responsive.css'
 
 class Sidebar extends Component {
   render() {

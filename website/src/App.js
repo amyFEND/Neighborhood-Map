@@ -5,8 +5,8 @@ import Sidebar from './Sidebar'
 import Map from './Map'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
-import './App.css'
-import './Responsive.css'
+import './styles/App.css'
+import './styles/Responsive.css'
 
 class App extends Component {
   constructor (props) {
