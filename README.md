@@ -33,7 +33,7 @@ Additionally, as a fan of the show Parks & Recreation, I added quotes I imagine 
     <img alt="Ride Selected Example" src="document-images/app-selection-example.png" width="600" />
 - To clear the selection, click on
   <img alt="Show All button screenshot" src="document-images/show-all-button-example.png" width="100" />
-- Click on the main/center marker to see a funny quote from Ron Swanson
+- Click on the main/center marker to see a funny quote from Ron Swanson (new quotes generated on page refresh)
   <br />
   <img alt="Center Marker InfoWindow shown, with quote from Ron Swanson" src="document-images/app-main-marker-infowindow.png" width="300" />
 
