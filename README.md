@@ -4,7 +4,7 @@
 This Neighborhood Map project (the seventh and final project for [Udacity's Front-End Web Development Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001))
 demonstrates my ability to create a single page web application using a
 JavaScript framework ([React JS](https://reactjs.org/)), a map API (Google Maps API),
-and at least one non-Google third-party API.
+and at least one non-Google, third-party API.
 
 My map shows my favorite rides in Disneyland and Disney California Adventure.  Using
 the [Themeparks API](https://www.npmjs.com/package/themeparks), I was able
