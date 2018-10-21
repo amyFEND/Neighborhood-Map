@@ -35,7 +35,7 @@ Additionally, as a fan of the show Parks & Recreation, I added quotes I imagine 
   <img alt="Show All button screenshot" src="document-images/show-all-button-example.png" width="100" />
 - Click on the main/center marker to see a funny quote from Ron Swanson
   <br />
-  <img alt="Center Marker InfoWindow shown, with quote from Ron Swanson" src="document-images/mobile-app-main-marker-infowindow.png" width="300" />
+  <img alt="Center Marker InfoWindow shown, with quote from Ron Swanson" src="document-images/app-main-marker-infowindow.png" width="300" />
 
 #### Skills Used
 - JavaScript
