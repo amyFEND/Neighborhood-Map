@@ -9,12 +9,12 @@ class LocationInfo extends Component {
 
     return(
       <div tabIndex="0" aria-labelledby="Ride Title" className="location-info" onClick={infoClicked.bind(this,ride)}>
-        <div id="location-info-header" className="location-info-header">
+        <title id="location-info-header" className="location-info-header">
           <span>{ride.title}</span>
-        </div>
+        </title>
 
         {!isHidden &&
-        <div className="location-details">
+        <section className="location-details">
           <span><strong>Park:</strong> {ride.park}</span>
           <br />
           <span><strong>Land:</strong> {ride.land}</span>
@@ -24,7 +24,7 @@ class LocationInfo extends Component {
           <span><strong>FASTPASS:</strong> {fastpass}</span>
           <br />
           <span><strong>Type:</strong> <ul className="location-ul">{rideTypes}</ul></span>
-        </div>
+        </section>
       }
       </div>
     )
