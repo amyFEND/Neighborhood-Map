@@ -11,6 +11,7 @@ class LocationInfo extends Component {
       <button
           tabIndex="0"
           aria-labelledby="Ride Title"
+          aria-haspopup="true"
           className="location-info"
           onClick={infoClicked.bind(this,ride)}>
         <title id="location-info-header" className="location-info-header">
@@ -18,7 +19,7 @@ class LocationInfo extends Component {
         </title>
 
         {!isHidden &&
-        <section className="location-details">
+        <section aria-expanded={infoClicked} className="location-details">
           <span><strong>Park:</strong> {ride.park}</span>
           <br />
           <span><strong>Land:</strong> {ride.land}</span>
