@@ -192,20 +192,6 @@ class App extends Component {
                 id: 'DisneylandResortCaliforniaAdventure_16514416' }
             ]
     }
-    this.handleClick = this.handleClick.bind(this)
-    this.updateQuery = this.updateQuery.bind(this)
-    this.clearQuery = this.clearQuery.bind(this)
-    this.markerClicked = this.markerClicked.bind(this)
-    this.infoClicked = this.infoClicked.bind(this)
-    this.toggleMainOpen = this.toggleMainOpen.bind(this)
-    this.zoomMap = this.zoomMap.bind(this)
-    this.getdisneylandRides = this.getdisneylandRides.bind(this)
-    this.getdisneyCaRides = this.getdisneyCaRides.bind(this)
-    /* ** Code for dropdown filter - work in progress **
-      ** TODO: get dropdown to filter rides list and markers **
-    */
-    // this.checked = this.checked.bind(this)
-    // this.filterItems = this.filterItems.bind(this)
   }
 
   componentDidMount() {
@@ -215,7 +201,7 @@ class App extends Component {
   }
 
   /* *** Toggles Sidebar *** */
-  handleClick() {
+  handleClick = () => {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }))
